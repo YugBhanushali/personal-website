@@ -1,0 +1,151 @@
+// Hey, 👋 I’m Yug a developer who loves to make stuff on the internet using internet and love to design which makes ux more smoother and cleaner. 
+
+export const HeroTitle = [
+    "Hey",
+    "👋",
+    "I'm",
+    "Yug",
+    "a",
+    "developer",
+    "who",
+    "loves",
+    "to",
+    "make",
+    "stuff",
+    "on",
+    "the",
+    "internet",
+    "using",
+    "internet",
+    "and",
+    "love",
+    "to",
+    "design",
+    "which",
+    "makes",
+    "ux",
+    "more",
+    "smoother",
+    "and",
+    "cleaner.",
+];
+
+const statuType:any = {
+    "Active":{
+        colour :"#0CCE6B",
+        title:"Active",
+        boxShadow:"#0bff0640"
+    },
+    "Building" :{
+        colour :"#FFB800",
+        title:"Building",
+        boxShadow:"#ffbf0040"
+    },
+    "Deploying" :{
+        colour :"#2f42f5",
+        title:"Deploying",
+        boxShadow:"#2f42f540"
+    }
+}
+
+
+export const projectCardData =[
+    {
+        projectId:1,
+        projectName:"Code to Image",
+        githubLink:"https://github.com/YugBhanushali/code-to-image",
+        projectLink:"https://codetoimg.vercel.app/",
+        projectImage:"/assets/code-to-image-home.png",
+        techStack:[
+            {
+                name:"React",
+                backgroundColour:"#21bad551",
+                borderColour:"#024149",
+                borderColourHover:"#088090",
+                icon:"https://img.icons8.com/color/48/000000/react-native.png"
+            },
+            {
+                name:'Redux',
+                backgroundColour:"#8000ff3b",
+                borderColour:"#382359",
+                borderColourHover:"#764abc",
+                icon:"https://img.icons8.com/color/48/000000/redux.png"
+            },
+            {
+                name:"Styled Components",
+                backgroundColour:"#d76d773b",
+                borderColour:"#6d3d77",
+                borderColourHover:"#d76d77",
+                icon:"https://img.icons8.com/color/48/000000/styled-components.png"
+            },
+            {
+                name:"Prismjs",
+                backgroundColour:"#f5d76e3b",
+                borderColour:"#939b00cc",
+                borderColourHover:"#f5d76e",
+                icon:"https://img.icons8.com/color/48/000000/prism.png"
+            },
+            {
+                name:"tailwindcss",
+                backgroundColour:"#06b6d43b",
+                borderColour:"#004959cc",
+                borderColourHover:"#06b6d4",
+                icon:"https://img.icons8.com/color/48/000000/tailwind-css.png"
+            }
+        ],
+    },
+
+    {
+        projectId:2,
+        projectName:"ZipURL",
+        githubLink:"https://github.com/YugBhanushali/ZipURL",
+        projectLink:"https://zipurl.tech/",
+        projectImage:"/assets/zipurl-home.png",
+        techStack:[
+            {
+                name:"NextJs",
+                backgroundColour:"#21bad551",
+                borderColour:"#024149",
+                borderColourHover:"#088090",
+                icon:"https://img.icons8.com/color/48/000000/nextjs.png"
+            },
+            {
+                name:'Typescript',
+                backgroundColour:"#8000ff3b",
+                borderColour:"#382359",
+                borderColourHover:"#764abc",
+                icon:"https://img.icons8.com/color/48/000000/typescript.png"
+            },
+            {   
+                name:"Supabase",
+                backgroundColour:"#d76d773b",
+                borderColour:"#6d3d77",
+                borderColourHover:"#d76d77",
+                icon:"https://img.icons8.com/color/48/000000/supabase.png"
+            },
+            {
+                name:"tailwindcss",
+                backgroundColour:"#06b6d43b",
+                borderColour:"#004959cc",
+                borderColourHover:"#06b6d4",
+                icon:"https://img.icons8.com/color/48/000000/tailwind-css.png"
+            },
+            {
+                name:"Chakra UI",
+                backgroundColour:"#f5d76e3b",
+                borderColour:"#939b00cc",
+                borderColourHover:"#f5d76e",
+                icon:"https://img.icons8.com/color/48/000000/chakra-ui.png"
+            }
+        ],
+    },
+];
+
+export function DevelperStatus (status:any){
+    return {
+        colour : statuType[status].colour,
+        title : statuType[status].title,
+        boxShadow : statuType[status].boxShadow
+    }
+} 
+
