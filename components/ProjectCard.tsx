@@ -72,9 +72,12 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
     <div>
       {/* <div className='flex flex-col bg-[#ffffff] bg-opacity-[0.16] border-[1.5px] border-[#515151] backdrop-filter backdrop-blur-2xl py-6 px-6 rounded-2xl'> */}
       <div
-        className="flex flex-col p-6 w-[450px] h-full bg-zinc-900 rounded-[15px] border-[1px] border-[#4c4c4cc5] hover:bg-white hover:bg-opacity-[0.15] hover:border-[#ffffff6e] duration-500 ease-in-out z-20 overflow-hidden"
+        className="flex flex-col p-6 w-[450px] h-full bg-zinc-900 rounded-[15px] border-[1px] border-[#4c4c4cc5] hover:bg-white hover:bg-opacity-[0.15] hover:border-[#ffffff6e] duration-500 ease-in-out z-20 overflow-hidden hover:scale-105"
         onMouseEnter={() => setIsHovered({ ...isHovered, card: true })}
         onMouseLeave={() => setIsHovered({ ...isHovered, card: false })}
+        style={{
+          boxShadow: isHovered.card ? "0px 0px 20px 0px #ffffff6e" : "",
+        }}
       >
        
         {/* Image of project */}
@@ -138,7 +141,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
           } w-full my-2 duration-500 ease-in-out `}
         />
         {/* tech stack used  */}
-        <div className="flex flex-wrap gap-2 justify-center">
+        <div className="flex flex-wrap gap-2 justify-center mt-1">
           {projectProps.techStack.map((techStackItem, index) => {
               return(
                 // <div className={`bg-[#21bad551] ${isHovered.card ? `border-[#088090]` :`border-[#024149]` } border-[2px] text-[15px] px-4 py-1 rounded-[18px] duration-300 ease-in-out`}
@@ -152,7 +155,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
                       alt="Picture of the author"
                       width={20}
                       height={20}
-                      className="rounded-xl hover:scale-102 duration-500 ease-in-out"
+                      className="rounded-lg hover:scale-102 duration-500 ease-in-out"
                     />
                   </div>
                   <div>

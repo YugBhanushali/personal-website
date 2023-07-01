@@ -1,6 +1,7 @@
 import { DevelperStatus, HeroTitle } from "@/utils/Constants";
 import React from "react";
 import { motion } from "framer-motion";
+import StatusCircle from "./StatusCircle";
 
 const Hero = () => {
 
@@ -13,13 +14,7 @@ const Hero = () => {
         <div className="flex justify-center items-center gap-2">
           {/* status */}
           <div className="flex justify-center">
-            <div
-              className={`h-2 w-2 rounded-full filter `}
-              style={{
-                boxShadow: `0px 0px 7px 4px ${boxShadow}`,
-                backgroundColor: `${colour}`,
-              }}
-            />
+            <StatusCircle currentStatus="Active" />
           </div>
 
           {/* status type */}

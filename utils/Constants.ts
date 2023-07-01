@@ -90,7 +90,7 @@ export const projectCardData =[
                 backgroundColour:"#06b6d43b",
                 borderColour:"#004959cc",
                 borderColourHover:"#06b6d4",
-                icon:"https://img.icons8.com/color/48/000000/tailwind-css.png"
+                icon:"/assets/tech-logos/tailwindcss.png"
             }
         ],
     },
@@ -103,45 +103,107 @@ export const projectCardData =[
         projectImage:"/assets/zipurl-home.png",
         techStack:[
             {
-                name:"NextJs",
-                backgroundColour:"#21bad551",
-                borderColour:"#024149",
-                borderColourHover:"#088090",
-                icon:"https://img.icons8.com/color/48/000000/nextjs.png"
+                name: "Next.js",
+                backgroundColour: "#9100006e",
+                borderColour: "#5f2101cc",
+                borderColourHover: "#c81717",
+                icon: "https://img.icons8.com/color/48/000000/nextjs.png",
+              },
+              {
+                name: "Chakra UI",
+                backgroundColour: "#3197953b",
+                borderColour: "#0e6a6699",
+                borderColourHover: "#319795",
+                icon: "https://img.icons8.com/color/48/000000/chakra-ui.png",
+              },
+              {
+                //supabase logo have green colour so choose the background colour accordingly
+                name: "Supabase",
+                backgroundColour: "#00ff003b",
+                borderColour: "#007100cc",
+                borderColourHover: "#00ff00",
+                icon: "/assets/tech-logos/supabase.png",
+              },
+              {
+                name: "TypeScript",
+                backgroundColour: "#007acc3b",
+                borderColour: "#02476ecc",
+                borderColourHover: "#007acc",
+                icon: "https://img.icons8.com/color/48/000000/typescript.png",
+              },
+              {
+                name: "tailwindcss",
+                backgroundColour: "#06b6d43b",
+                borderColour: "#004959cc",
+                borderColourHover: "#06b6d4",
+                icon: "/assets/tech-logos/tailwindcss.png",
+            },
+
+        ],
+    },
+    {
+        projectId:3,
+        projectName:"EventHub",
+        githubLink:"https://github.com/YugBhanushali/Event-Hub-Frontend",
+        projectLink:"https://eventhubs.vercel.app/",
+        projectImage:"/assets/event-hub-home.png",
+        techStack:[
+            {
+                name: "React",
+                backgroundColour: "#21bad551",
+                borderColour: "#024149",
+                borderColourHover: "#088090",
+                icon: "https://img.icons8.com/color/48/000000/react-native.png",
             },
             {
-                name:'Typescript',
-                backgroundColour:"#8000ff3b",
-                borderColour:"#382359",
-                borderColourHover:"#764abc",
-                icon:"https://img.icons8.com/color/48/000000/typescript.png"
+                name: "Node js",
+                backgroundColour: "#00ff003b",
+                borderColour: "#007100cc",
+                borderColourHover: "#00ff00",
+                icon: "/assets/tech-logos/nodejs.png",
             },
-            {   
-                name:"Supabase",
-                backgroundColour:"#d76d773b",
-                borderColour:"#6d3d77",
-                borderColourHover:"#d76d77",
-                icon:"https://img.icons8.com/color/48/000000/supabase.png"
+            {
+                name: "Express js",
+                backgroundColour:"#f5d76e3b",
+                borderColour:"#939b00cc",
+                borderColourHover:"#f5d76e",
+                icon: "/assets/tech-logos/expressjs.png",
+            },
+            {
+                name: "MongoDB",
+                backgroundColour: "#00ff003b",
+                borderColour: "#007100cc",
+                borderColourHover: "#00ff00",
+                icon: "https://img.icons8.com/color/48/000000/mongodb.png",
+            },
+        ]
+    },
+    {
+        projectId:4,
+        projectName:"SGPA Calculator",
+        githubLink:"https://github.com/YugBhanushali/SGPA-Calculator",
+        projectLink:"https://sgpa-calculators.vercel.app/",
+        projectImage:"/assets/sgpa-calculator-home.png",
+        techStack:[
+            {
+                name:"Next.js",
+                backgroundColour:"#9100006e",
+                borderColour:"#5f2101cc",
+                borderColourHover:"#c81717",
+                icon:"https://img.icons8.com/color/48/000000/nextjs.png"
             },
             {
                 name:"tailwindcss",
                 backgroundColour:"#06b6d43b",
                 borderColour:"#004959cc",
                 borderColourHover:"#06b6d4",
-                icon:"https://img.icons8.com/color/48/000000/tailwind-css.png"
-            },
-            {
-                name:"Chakra UI",
-                backgroundColour:"#f5d76e3b",
-                borderColour:"#939b00cc",
-                borderColourHover:"#f5d76e",
-                icon:"https://img.icons8.com/color/48/000000/chakra-ui.png"
+                icon:"/assets/tech-logos/tailwindcss.png"
             }
-        ],
-    },
+        ]
+    }
 ];
 
-export function DevelperStatus (status:any){
+export function DevelperStatus (status:"Active"|"Building"|"Deploying"){
     return {
         colour : statuType[status].colour,
         title : statuType[status].title,

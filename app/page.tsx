@@ -16,6 +16,8 @@ export default function Home() {
       <Particles className="absolute inset-0 -z-10 " />
       <Particles className="absolute inset-0 -z-10 " />
       <Particles className="absolute inset-0 -z-10 " />
+      <Particles className="absolute inset-0 -z-10 " />
+      <Particles className="absolute inset-0 -z-10 " />
 
       <Hero />
       <Projects />
