@@ -72,7 +72,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
     <div>
       {/* <div className='flex flex-col bg-[#ffffff] bg-opacity-[0.16] border-[1.5px] border-[#515151] backdrop-filter backdrop-blur-2xl py-6 px-6 rounded-2xl'> */}
       <div
-        className="flex flex-col p-6 w-[450px] h-full bg-zinc-900 rounded-[15px] border-[1px] border-[#4c4c4cc5] hover:bg-white hover:bg-opacity-[0.15] hover:border-[#ffffff6e] duration-500 ease-in-out z-20 overflow-hidden hover:scale-105"
+        className="flex flex-col sm:p-6 p-4 w-[340px] sm:w-[450px] h-full bg-zinc-900 sm:rounded-[15px] rounded-[12px] border-[1px] border-[#4c4c4cc5] hover:bg-white hover:bg-opacity-[0.15] hover:border-[#ffffff6e] duration-500 ease-in-out z-20 overflow-hidden hover:scale-105"
         onMouseEnter={() => setIsHovered({ ...isHovered, card: true })}
         onMouseLeave={() => setIsHovered({ ...isHovered, card: false })}
         style={{
@@ -87,7 +87,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
             alt="Picture of the author"
             width={400}
             height={400}
-            className="rounded-xl hover:scale-102 duration-500 ease-in-out"
+            className="sm:rounded-xl rounded-lg hover:scale-102 duration-500 ease-in-out"
           />
         </div>
 
@@ -96,7 +96,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
           <div className=" bg-transparent">
             <Link href={projectProps.githubLink} className=" bg-transparent">
               <FiGithub
-                className="hover:scale-[1.2] duration-500 ease-in-out h-6 w-6"
+                className="hover:scale-[1.2] duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4"
                 color={isHovered.github ? "#0CCE6B" : "#ffffff"}
                 onMouseEnter={() =>
                   setIsHovered(() => {
@@ -112,12 +112,12 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
             </Link>
           </div>
 
-          <div className="text-[18px] font-bold">{projectProps.projectName}</div>
+          <div className="sm:text-[18px] text-[15px] font-bold">{projectProps.projectName}</div>
 
           <div>
             <Link href={projectProps.projectLink}>
               <FiExternalLink
-                className="hover:scale-[1.2] duration-500 ease-in-out h-6 w-6"
+                className="hover:scale-[1.2] duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4"
                 color={isHovered.site ? "#0CCE6B" : "#ffffff"}
                 onMouseEnter={() =>
                   setIsHovered(() => {
@@ -145,7 +145,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
           {projectProps.techStack.map((techStackItem, index) => {
               return(
                 // <div className={`bg-[#21bad551] ${isHovered.card ? `border-[#088090]` :`border-[#024149]` } border-[2px] text-[15px] px-4 py-1 rounded-[18px] duration-300 ease-in-out`}
-                <div className={`border-[2px] flex justify-center items-center gap-1 text-[13px] px-4 py-1 rounded-[18px] duration-300 ease-in-out`}
+                <div className={`border-[2px] flex justify-center items-center gap-1 sm:text-[13px] text-[11px] px-4 py-1 rounded-[18px] duration-300 ease-in-out`}
                 key={index}
                 style={{backgroundColor:techStackItem.backgroundColour , borderColor: `${isHovered.card ? techStackItem.borderColourHover : techStackItem.borderColour  }` }}
                 >
@@ -155,7 +155,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
                       alt="Picture of the author"
                       width={20}
                       height={20}
-                      className="rounded-lg hover:scale-102 duration-500 ease-in-out"
+                      className="rounded-lg hover:scale-102 duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4"
                     />
                   </div>
                   <div>

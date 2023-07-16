@@ -2,6 +2,7 @@ import { DevelperStatus, HeroTitle } from "@/utils/Constants";
 import React from "react";
 import { motion } from "framer-motion";
 import StatusCircle from "./StatusCircle";
+import { Particles } from "./Particles";
 
 const Hero = () => {
 

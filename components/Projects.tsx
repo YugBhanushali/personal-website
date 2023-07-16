@@ -14,7 +14,7 @@ const Projects = () => {
           className='rounded-[25px] hover:border-zinc-400 duration-300 ease-in mb-6'
         />
       </div>
-      <div className='flex flex-wrap gap-8 justify-center'>
+      <div className='flex flex-wrap sm:gap-8 gap-6 justify-center '>
         {projectCardData.map((project, index) => (
           <ProjectCard
             key={index}

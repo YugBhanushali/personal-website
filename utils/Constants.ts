@@ -107,7 +107,7 @@ export const projectCardData =[
                 backgroundColour: "#9100006e",
                 borderColour: "#5f2101cc",
                 borderColourHover: "#c81717",
-                icon: "https://img.icons8.com/color/48/000000/nextjs.png",
+                icon: "/assets/tech-logos/nextjs.png",
               },
               {
                 name: "Chakra UI",
@@ -190,7 +190,7 @@ export const projectCardData =[
                 backgroundColour:"#9100006e",
                 borderColour:"#5f2101cc",
                 borderColourHover:"#c81717",
-                icon:"https://img.icons8.com/color/48/000000/nextjs.png"
+                icon:"/assets/tech-logos/nextjs.png"
             },
             {
                 name:"tailwindcss",
@@ -202,6 +202,49 @@ export const projectCardData =[
         ]
     }
 ];
+
+export const tecnologiesData = [
+    {
+        name:"React",
+        boxShadow:"0px 0px 15px 4px #00708b",
+        image:"/assets/tech-logos/reactjs.png"
+    },
+    {
+        name:"Next.js",
+        boxShadow:"0px 0px 15px 4px #b7b7b7c7",
+        image:"/assets/tech-logos/nextjs.png"
+    },
+    {
+        name:"JavaScript",
+        boxShadow:"0px 0px 15px 4px #978600",
+        image:"/assets/tech-logos/javascript.png"
+    },
+    {
+        name:"Node js",
+        boxShadow:"0px 0px 15px 4px #226f00",
+        image:"/assets/tech-logos/nodejs.png"
+    },
+    {
+        name:"mySQL",
+        boxShadow:"0px 0px 15px 4px #00708b",
+        image:"/assets/tech-logos/mySQL.png"
+    },
+    {
+        name:"MongoDB",
+        boxShadow:"0px 0px 15px 4px #00692c",
+        image:"/assets/tech-logos/mongodB.png"
+    },
+    {
+        name:"typescript",
+        boxShadow:"0px 0px 15px 4px #00708b",
+        image:"/assets/tech-logos/typescript.png"
+    },
+    {
+        name:"tailwindcss",
+        boxShadow:"0px 0px 15px 4px #00708b",
+        image:"/assets/tech-logos/tailwindcss.png"
+    }
+]
 
 export function DevelperStatus (status:"Active"|"Building"|"Deploying"){
     return {
