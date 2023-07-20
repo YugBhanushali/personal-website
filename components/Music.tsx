@@ -18,6 +18,12 @@ const Music = () => {
   const [totalSongTime, setTotalSongTime] = React.useState(0);
   const [currentSongIndex, setCurrentSongIndex] = React.useState(0);
   const [currentVolume, setCurrentVolume] = React.useState(0);
+  const [onMove, setOnMove] = React.useState({
+    forBar: false,
+    forVolume: false,
+  });
+  const [initialRender, setInitialRender] = React.useState(true);
+  const [isHovering, setIsHovering] = React.useState(false);
 
   const playSong = () => {
     setIsPlaying(!isPlaying);
@@ -31,6 +37,19 @@ const Music = () => {
   const handleVolumeChange = (value:any) => {
     setCurrentVolume(value);
     audioElement.current.volume = value;
+    if(initialRender){
+      setInitialRender(false);
+      setOnMove((prevState) => ({
+        ...prevState,
+        forVolume: false,
+      }))
+    }
+    else{
+      setOnMove((prevState) => ({
+        ...prevState,
+        forVolume: true,
+      }))
+    }
   };
   
 
@@ -54,15 +73,21 @@ const Music = () => {
       setCurrentSongTime(audioElement.current.currentTime);
     });
     setTotalSongTime(getTotalSongTime());
-
+    console.log(currentVolume);
     handleVolumeChange(audioElement.current.volume);
-  }, [currentSongIndex,totalSongTime]);
+    
+  }, []);
 
   return (
     <>
     <div
-      className="flex flex-col bg-zinc-900 p-6 rounded-[30px] "
-      style={{ outline: "1.5px solid #4c4c4cc5" }}
+      className="flex flex-col bg-zinc-900 p-6 rounded-[30px] hover:scale-105 transition-all duration-300 ease-in-out"
+      style={{ outline: "1.5px solid #4c4c4cc5",
+      // boxShadow:  "0px 0px 10px 4px #ffffff1a"
+      boxShadow: isHovering ? "0px 0px 20px 5px #ffffff7a" : "0px 0px 0px 0px #ffffff00"
+     }}
+      onMouseOver={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
     >
       {/* music image */}
       <div>
@@ -70,14 +95,17 @@ const Music = () => {
           src={songs[currentSongIndex].image}
           alt="Picture of the author"
           width={300}
-          height={400}
-          className="duration-500 max-h-[400px] rounded-[20px]"
+          height={600}
+          className="duration-500 max-h-[350px] w-full rounded-[20px]"
+          style={{
+            objectFit: "cover",
+          }}
         />
       </div>
 
       {/* music title */}
-      <div className="flex flex-col justify-center items-center mt-3">
-        <div className="text-white text-xl font-bold">
+      <div className="flex flex-col justify-center items-center mt-2 z-1">
+        <div className="text-white text-[18px] font-bold">
           Cornfield Chase
         </div>
         <div className="text-[13px] text-gray-400">
@@ -86,8 +114,8 @@ const Music = () => {
       </div>
 
       {/* music progress bar */}
-      <div className="flex flex-row mt-[20px] items-center justify-center">
-        <div className="flex flex-row gap-3 text-[13px] justify-between items-center">
+      <div className="flex flex-row mt-[10px] items-center justify-center">
+        <div className={`flex flex-row gap-3 text-[13px] justify-center items-center ${onMove.forBar ? `text-gray-200` : `text-gray-400`} duration-300 ease-in-out`}>
           <div>{formatTime(Number(currentSongTime.toFixed(0)))}</div>
           <div>
             <Slider
@@ -98,17 +126,24 @@ const Music = () => {
                 (value) => {
                   setCurrentSongTime(value);
                   audioElement.current.currentTime = value;
-                  console.log(value);
+                  setOnMove((prevState) => ({
+                    ...prevState,
+                    forBar: true,
+                  }))
                 }
               }
               className="w-[160px] h-2 bg-transparent text-black rounded mt-[7px]"
-              trackStyle={{ backgroundColor: "#c4c4c4" }}
-              railStyle={{ backgroundColor: "#c4c4c45e" }}
+              trackStyle={{ backgroundColor: onMove.forBar ? "#fff" : "#c4c4c4d1", height : '5px' }}
+              railStyle={{ backgroundColor: "#c4c4c452", height : '5px'}}
               tooltip={
                 {
                   open: false,
                 }
               }
+              onAfterChange={()=>setOnMove((prevState) => ({
+                ...prevState,
+                forBar: false,
+              }))}
             />
           </div>
           <div>-{formatTime(totalSongTime-Number(currentSongTime.toFixed(0)))}</div>
@@ -156,7 +191,7 @@ const Music = () => {
       {/* volume controller */}
       <div className="flex flex-row gap-x-3 justify-center items-center">
         <div>
-            <BsFillVolumeOffFill className="text-[#dcdcdca9] text-3xl cursor-pointer"/>
+          <BsFillVolumeOffFill className={`${onMove.forVolume ? `text-white` : `text-gray-500`} ease-in-out duration-200 text-3xl cursor-pointer`}/>
         </div>
         <div>
             <Slider
@@ -165,22 +200,22 @@ const Music = () => {
               max={1}
               step={0.01}
               onChange={handleVolumeChange}
-              className="w-[160px] h-2 bg-transparent text-black rounded mt-[7px]"
-              trackStyle={{ backgroundColor: "#c4c4c4" }}
-              railStyle={{ backgroundColor: "#c4c4c45e" }}
+              className="w-[160px] h-2 bg-transparent text-black rounded mt-[7px] transition ease-in-out duration-200"
+              trackStyle={{ backgroundColor: onMove.forVolume ? "#fff" : "#c4c4c4d1", height : '5px' }}
+              railStyle={{ backgroundColor: "#c4c4c452", height : '5px' }}
               tooltip={
                 {
                   open: false,
                 }
               }
-              handleStyle={
-                {
-                }
-              }
+              onAfterChange={()=>setOnMove((prevState) => ({
+                ...prevState,
+                forVolume: false,
+                }))}
             />
         </div>
         <div>
-          <BsFillVolumeUpFill className="text-[#dcdcdca9] text-3xl cursor-pointer"/>
+          <BsFillVolumeUpFill className={`${onMove.forVolume ? `text-white` : `text-gray-500`} ease-in-out duration-200 text-3xl cursor-pointer`}/>
         </div>
       </div>
 
