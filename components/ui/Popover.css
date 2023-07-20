@@ -1,0 +1,33 @@
+.popover-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hover-element {
+    display: inline-block;
+  }
+  
+  .popover {
+    position: absolute;
+    top: -75px; /* Adjust the value to control the distance from the hover element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.16);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .arrow-down {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgba(255, 255, 255, 0.16);
+    animation: ease-in-out 0.3s;
+    outline: white;
+  }

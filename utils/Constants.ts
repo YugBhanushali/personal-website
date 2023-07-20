@@ -205,12 +205,12 @@ export const projectCardData =[
 
 export const tecnologiesData = [
     {
-        name:"React",
+        name:"ReactJs",
         boxShadow:"0px 0px 15px 4px #00708b",
         image:"/assets/tech-logos/reactjs.png"
     },
     {
-        name:"Next.js",
+        name:"NextJs",
         boxShadow:"0px 0px 15px 4px #b7b7b7c7",
         image:"/assets/tech-logos/nextjs.png"
     },
@@ -220,12 +220,12 @@ export const tecnologiesData = [
         image:"/assets/tech-logos/javascript.png"
     },
     {
-        name:"Node js",
+        name:"NodeJs",
         boxShadow:"0px 0px 15px 4px #226f00",
         image:"/assets/tech-logos/nodejs.png"
     },
     {
-        name:"mySQL",
+        name:"MySQL",
         boxShadow:"0px 0px 15px 4px #00708b",
         image:"/assets/tech-logos/mySQL.png"
     },
@@ -235,15 +235,78 @@ export const tecnologiesData = [
         image:"/assets/tech-logos/mongodB.png"
     },
     {
-        name:"typescript",
+        name:"TypeScript",
         boxShadow:"0px 0px 15px 4px #00708b",
         image:"/assets/tech-logos/typescript.png"
     },
     {
-        name:"tailwindcss",
+        name:"Tailwind",
         boxShadow:"0px 0px 15px 4px #00708b",
         image:"/assets/tech-logos/tailwindcss.png"
+    },
+    {
+        name:"Java",
+        boxShadow:"0px 0px 15px 4px #9d5600",
+        image:"/assets/tech-logos/java.png"
+    },
+    {
+        name:"Redux",
+        boxShadow:"0px 0px 15px 4px #5b0081",
+        image:"/assets/tech-logos/Redux.png"
     }
+]
+
+export const toolsData = [
+    {
+        name:"VS Code",
+        boxShadow:"0px 0px 15px 4px #3498db",
+        image:"/assets/tool-logos/VSCode.png",
+        height:50,
+        width:50
+    },
+    {
+        name:"Git",
+        boxShadow:"0px 0px 15px 4px #d35400",
+        image:"/assets/tool-logos/git.png",
+        height:50,
+        width:50
+    },
+    {
+        name:"Figma",
+        boxShadow:"0px 0px 15px 4px #14d364",
+        image:"/assets/tool-logos/figma.png",
+        height:30,
+        width:30
+    },
+    {
+        name:"Postman",
+        boxShadow:"0px 0px 15px 4px #dc7633",
+        image:"/assets/tool-logos/postman.png",
+        height:80,
+        width:80
+    },
+    {
+        name:"Vercel",
+        boxShadow:"0px 0px 15px 4px #cacfd2",
+        image:"/assets/tool-logos/vercel.png",
+        height:50,
+        width:50
+    },
+    {
+        name:"Arc",
+        boxShadow:"0px 0px 15px 4px #ff0000",
+        image:"/assets/tool-logos/arc.png",
+        height:80,
+        width:80
+    },
+    {
+        name:"Hyper",
+        boxShadow:"0px 0px 15px 4px #ab006a",
+        image:"/assets/tool-logos/hyper.png",
+        height:50,
+        width:50
+    },
+
 ]
 
 export function DevelperStatus (status:"Active"|"Building"|"Deploying"){
@@ -253,4 +316,21 @@ export function DevelperStatus (status:"Active"|"Building"|"Deploying"){
         boxShadow : statuType[status].boxShadow
     }
 } 
+
+export const musicData = [
+    {
+        id:1,
+        name:"Interstellar",
+        artist:"Hans Zimmer",
+        image:"/assets/music/images/interstellar.jpg",
+        audio:"/assets/music/audio/interstellar.mp3"
+    },
+    {
+        id:2,
+        name:"Make you mine",
+        artist:"Public",
+        image:"/assets/music/images/make-you-mine.jpg",
+        audio:"/assets/music/audio/make-you-mine.mp3"
+    },
+]
 

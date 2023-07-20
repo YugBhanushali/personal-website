@@ -2,10 +2,13 @@
 
 import Hero from '@/components/Hero'
 import { HighlightGroup, HighlighterItem } from '@/components/Highlighter'
+import Location from '@/components/Location'
+import LocationAndMusic from '@/components/LocationAndMusic'
 import { Particles } from '@/components/Particles'
 import { Pricing } from '@/components/Pricing'
 import Projects from '@/components/Projects'
 import Techs from '@/components/Techs'
+import Tools from '@/components/Tools'
 // import { Features } from '@/components/Pricing'
 
 import Image from 'next/image'
@@ -24,6 +27,9 @@ export default function Home() {
 
       <Techs />
 
+      <Tools />
+
+      <LocationAndMusic />
     </main>
   )
 }

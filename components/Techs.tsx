@@ -2,6 +2,7 @@ import React from 'react'
 import SectionDivider from './SectionDivider'
 import Tech from './Tech'
 import { tecnologiesData } from '@/utils/Constants'
+import Popover from './ui/Popover'
 
 const Techs = () => {
     
@@ -15,11 +16,13 @@ const Techs = () => {
       <div className='flex flex-wrap gap-4'>
         {
           tecnologiesData.map((tech, index) => (
-            <Tech 
-              key={index}
-              boxShadow={tech.boxShadow}
-              image={tech.image}
-            />
+            <Popover content={tech.name}>
+              <Tech 
+                key={index}
+                boxShadow={tech.boxShadow}
+                image={tech.image}
+              />
+            </Popover>
           ))
         }
       </div>
