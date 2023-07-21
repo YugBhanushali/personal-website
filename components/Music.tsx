@@ -81,7 +81,7 @@ const Music = () => {
   return (
     <>
     <div
-      className="flex flex-col bg-zinc-900 p-6 rounded-[30px] hover:scale-105 transition-all duration-300 ease-in-out"
+      className="flex flex-col bg-zinc-900 p-6 rounded-[30px] gap-y-2  hover:scale-105 transition-all duration-500 ease-in-out"
       style={{ outline: "1.5px solid #4c4c4cc5",
       // boxShadow:  "0px 0px 10px 4px #ffffff1a"
       boxShadow: isHovering ? "0px 0px 20px 5px #ffffff7a" : "0px 0px 0px 0px #ffffff00"
@@ -103,58 +103,20 @@ const Music = () => {
         />
       </div>
 
-      {/* music title */}
-      <div className="flex flex-col justify-center items-center mt-2 z-1">
-        <div className="text-white text-[18px] font-bold">
-          Cornfield Chase
-        </div>
-        <div className="text-[13px] text-gray-400">
-          Hans Zimmer
-        </div>
-      </div>
-
-      {/* music progress bar */}
-      <div className="flex flex-row mt-[10px] items-center justify-center">
-        <div className={`flex flex-row gap-3 text-[13px] justify-center items-center ${onMove.forBar ? `text-gray-200` : `text-gray-400`} duration-300 ease-in-out`}>
-          <div>{formatTime(Number(currentSongTime.toFixed(0)))}</div>
-          <div>
-            <Slider
-              value={currentSongTime}
-              min={0}
-              max={totalSongTime}
-              onChange={
-                (value) => {
-                  setCurrentSongTime(value);
-                  audioElement.current.currentTime = value;
-                  setOnMove((prevState) => ({
-                    ...prevState,
-                    forBar: true,
-                  }))
-                }
-              }
-              className="w-[160px] h-2 bg-transparent text-black rounded mt-[7px]"
-              trackStyle={{ backgroundColor: onMove.forBar ? "#fff" : "#c4c4c4d1", height : '5px' }}
-              railStyle={{ backgroundColor: "#c4c4c452", height : '5px'}}
-              tooltip={
-                {
-                  open: false,
-                }
-              }
-              onAfterChange={()=>setOnMove((prevState) => ({
-                ...prevState,
-                forBar: false,
-              }))}
-            />
+      {/* music title and play & pause */}
+      <div className="flex flex-row max-w-[300px] justify-between items-center mt-3 z-1">
+        {/* music title */}
+        <div className="flex flex-col justify-start">
+          <div className="text-white text-[18px] font-bold">
+            Cornfield Chase
           </div>
-          <div>-{formatTime(totalSongTime-Number(currentSongTime.toFixed(0)))}</div>
+          <div className="text-[13px] text-gray-400">
+            Hans Zimmer
+          </div>
         </div>
 
-        <audio loop ref={audioElement} src={songs[currentSongIndex].audio} />
-
-      </div>
-
-      {/* play & pause */}
-      <div className="flex mt-1 flex-row items-center justify-center gap-x-4">
+        {/* play & pause */}
+        <div className="flex mt-1 flex-row items-center justify-center gap-x-4">
         <AnimatePresence>
           <div>
             {isPlaying ? (
@@ -186,38 +148,87 @@ const Music = () => {
             )}
           </div>
         </AnimatePresence>
+        </div>
       </div>
 
-      {/* volume controller */}
-      <div className="flex flex-row gap-x-3 justify-center items-center">
-        <div>
-          <BsFillVolumeOffFill className={`${onMove.forVolume ? `text-white` : `text-gray-500`} ease-in-out duration-200 text-3xl cursor-pointer`}/>
-        </div>
-        <div>
-            <Slider
-              value={currentVolume}
-              min={0}
-              max={1}
-              step={0.01}
-              onChange={handleVolumeChange}
-              className="w-[160px] h-2 bg-transparent text-black rounded mt-[7px] transition ease-in-out duration-200"
-              trackStyle={{ backgroundColor: onMove.forVolume ? "#fff" : "#c4c4c4d1", height : '5px' }}
-              railStyle={{ backgroundColor: "#c4c4c452", height : '5px' }}
-              tooltip={
-                {
-                  open: false,
+
+      <div className="flex flex-col items-center justify-center gap-y-2">
+        {/* music progress bar */}
+        <div className="flex flex-row mt-[10px] items-center justify-center">
+          <div className={`flex flex-row gap-2 text-[13px] justify-center items-center ${onMove.forBar ? `text-gray-200` : `text-gray-400`} duration-300 ease-in-out`}>
+            <div>{formatTime(Number(currentSongTime.toFixed(0)))}</div>
+            <div>
+              <Slider
+                value={currentSongTime}
+                min={0}
+                max={totalSongTime}
+                onChange={
+                  (value) => {
+                    setCurrentSongTime(value);
+                    audioElement.current.currentTime = value;
+                    setOnMove((prevState) => ({
+                      ...prevState,
+                      forBar: true,
+                    }))
+                  }
                 }
-              }
-              onAfterChange={()=>setOnMove((prevState) => ({
-                ...prevState,
-                forVolume: false,
+                className="w-[170px] h-2 bg-transparent text-black rounded mt-[7px]"
+                trackStyle={{ backgroundColor: onMove.forBar ? "#fff" : "#c4c4c4d1", height : '5px' }}
+                railStyle={{ backgroundColor: "#c4c4c452", height : '5px'}}
+                tooltip={
+                  {
+                    open: false,
+                  }
+                }
+                onAfterChange={()=>setOnMove((prevState) => ({
+                  ...prevState,
+                  forBar: false,
                 }))}
-            />
+              />
+            </div>
+            <div>-{formatTime(totalSongTime-Number(currentSongTime.toFixed(0)))}</div>
+          </div>
+
+          <audio loop ref={audioElement} src={songs[currentSongIndex].audio} />
+
         </div>
-        <div>
-          <BsFillVolumeUpFill className={`${onMove.forVolume ? `text-white` : `text-gray-500`} ease-in-out duration-200 text-3xl cursor-pointer`}/>
+
+        {/* volume controller */}
+        <div className="flex flex-row gap-x-2 justify-center items-center">
+          <div>
+            <BsFillVolumeOffFill className={`${onMove.forVolume ? `text-white` : `text-gray-500`} ease-in-out duration-200 text-3xl cursor-pointer`}/>
+          </div>
+          <div>
+              <Slider
+                value={currentVolume}
+                min={0}
+                max={1}
+                step={0.01}
+                onChange={handleVolumeChange}
+                className="w-[190px] h-2 bg-transparent text-black rounded mt-[7px] transition ease-in-out duration-200"
+                trackStyle={{ backgroundColor: onMove.forVolume ? "#fff" : "#c4c4c4d1", height : '5px' }}
+                railStyle={{ backgroundColor: "#c4c4c452", height : '5px' }}
+                tooltip={
+                  {
+                    open: false,
+                  }
+                }
+                onAfterChange={()=>setOnMove((prevState) => ({
+                  ...prevState,
+                  forVolume: false,
+                  }))}
+              />
+          </div>
+          <div>
+            <BsFillVolumeUpFill className={`${onMove.forVolume ? `text-white` : `text-gray-500`} ease-in-out duration-200 text-3xl cursor-pointer`}/>
+          </div>
         </div>
       </div>
+
+
+      
+      
+
 
     </div>
     </>

@@ -7,7 +7,7 @@ import { Particles } from './Particles'
 const Projects = () => {
 
   return (
-    <div className='flex flex-col gap-6 items-center mt-[100px]'>
+    <div id='projects' className='flex flex-col gap-6 items-center mt-[100px]'>
       <div className='flex'>
         <SectionDivider
           sectionName = 'Projects'
