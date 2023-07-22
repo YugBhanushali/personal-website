@@ -7,9 +7,10 @@ import LocationAndMusic from '@/components/LocationAndMusic'
 import { Particles } from '@/components/Particles'
 import { Pricing } from '@/components/Pricing'
 import Projects from '@/components/Projects'
+import Socials from '@/components/Socials'
 import Techs from '@/components/Techs'
 import Tools from '@/components/Tools'
-// import { Features } from '@/components/Pricing'
+
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -30,6 +31,8 @@ export default function Home() {
       <Tools />
 
       <LocationAndMusic />
+
+      <Socials />
     </main>
   )
 }

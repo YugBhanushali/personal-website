@@ -334,3 +334,20 @@ export const musicData = [
     },
 ]
 
+export const socialLinks = [
+    {
+        id:1,
+        name:"Twitter",
+        link:"https://twitter.com/TheYug03",
+    },
+    {
+        id:2,
+        name:"Github",
+        link:"https://github.com/YugBhanushali"
+    },
+    {
+        id:3,
+        name:"LinkedIn",
+        link:"https://www.linkedin.com/in/yug-bhanushali-b3b872224/"
+    }
+]
