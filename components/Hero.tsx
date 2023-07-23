@@ -10,18 +10,25 @@ const Hero = () => {
   const { title, colour, boxShadow } = DevelperStatus("Active");
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="flex w-fit justify-center bg-[#ffffff] bg-opacity-[0.16] py-1 px-4 rounded-[20px] border-[1.5px] border-[#515151] backdrop-filter backdrop-blur-2xl">
-        <div className="flex justify-center items-center gap-2">
-          {/* status */}
-          <div className="flex justify-center">
-            <StatusCircle currentStatus="Active" />
-          </div>
+    <div className="flex flex-col justify-center items-center mt-[150px]">
+      <motion.div
+        initial={{ opacity: 0, y: 200 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, ease: "easeInOut" }}
+        className="flex flex-col items-center justify-center"
+      >
+        <div className="flex w-fit justify-center bg-[#ffffff] bg-opacity-[0.16] py-1 px-4 rounded-[20px] border-[1.5px] border-[#515151] backdrop-filter backdrop-blur-2xl">
+          <div className="flex justify-center items-center gap-2">
+            {/* status */}
+            <div className="flex justify-center">
+              <StatusCircle currentStatus="Active" />
+            </div>
 
-          {/* status type */}
-          <div className="text-[13px] sm:text-[15px]">{title}</div>
+            {/* status type */}
+            <div className="text-[13px] sm:text-[15px]">{title}</div>
+          </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* title */}
       <div className="mt-[50px] sm:w-[500px] w-[300px] sm:text-[22px] text-[19px] justify-center text-center">

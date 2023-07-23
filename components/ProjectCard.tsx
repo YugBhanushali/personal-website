@@ -5,6 +5,7 @@ import { HighlightGroup, HighlighterItem } from "./Highlighter";
 import { Particles } from "./Particles";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
+import Demo from "./ui/Demo";
 
 // {
 //   projectId:1,
@@ -79,7 +80,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
           boxShadow: isHovered.card ? "0px 0px 20px 0px #ffffff6e" : "",
         }}
       >
-       
+      
         {/* Image of project */}
         <div className="flex">
           <Image

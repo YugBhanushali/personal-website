@@ -9,6 +9,7 @@ import { BsFillPlayFill, BsFillVolumeOffFill, BsPauseFill
 import {IoPlayForward, IoPlayBack
 } from "react-icons/io5";
 import {BsFillVolumeUpFill} from "react-icons/bs";
+import Demo from "./ui/Demo";
 
 const Music = () => {
   const audioElement = React.useRef<any>(null);
@@ -80,7 +81,10 @@ const Music = () => {
 
   return (
     <>
-    <div
+    <Demo
+      className="flex flex-col bg-zinc-900 p-6 rounded-[44px] gap-y-2  hover:scale-105 transition-all duration-500 ease-in-out"
+    >
+    {/* <div
       className="flex flex-col bg-zinc-900 p-6 rounded-[30px] gap-y-2  hover:scale-105 transition-all duration-500 ease-in-out"
       style={{ outline: "1.5px solid #4c4c4cc5",
       // boxShadow:  "0px 0px 10px 4px #ffffff1a"
@@ -88,7 +92,7 @@ const Music = () => {
      }}
       onMouseOver={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-    >
+    > */}
       {/* music image */}
       <div>
         <Image
@@ -229,8 +233,8 @@ const Music = () => {
       
       
 
-
-    </div>
+    </Demo>
+    {/* </div> */}
     </>
   );
 };
