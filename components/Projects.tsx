@@ -69,7 +69,7 @@ const Projects = () => {
         />
       </motion.div>
       <motion.div 
-        className='flex flex-wrap sm:gap-8 gap-6 justify-center '
+        className='flex flex-wrap sm:gap-8 gap-6 justify-center'
         style={{opacity:cardOpacity,scale:cardScale}}
       >
         {projectCardData.map((project, index) => (
