@@ -176,7 +176,7 @@ const Music = () => {
                     }))
                   }
                 }
-                className="w-[170px] h-2 bg-transparent text-black rounded mt-[7px]"
+                className="sm:w-[170px] w-[150px] h-2 bg-transparent text-black rounded mt-[7px]"
                 trackStyle={{ backgroundColor: onMove.forBar ? "#fff" : "#c4c4c4d1", height : '5px' }}
                 railStyle={{ backgroundColor: "#c4c4c452", height : '5px'}}
                 tooltip={

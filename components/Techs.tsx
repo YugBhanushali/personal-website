@@ -14,6 +14,11 @@ const Techs = () => {
     offset: ["start end", "end start"]
   });
 
+  const opacity = useTransform(scrollYProgress,
+    [0, 0.5],
+    [0, 1]
+  );
+
   const xTechLeft = useTransform(scrollYProgress,
     [0, 0.4],
     ["-200px", "0px"]
@@ -34,14 +39,23 @@ const Techs = () => {
     return {x}
   }
 
+  const scaleSection = useTransform(scrollYProgress,
+    [0, 0.4],
+    [1.4,1]
+  );
+
 
     
   return (
     <div ref={targetRef} className='flex flex-col items-center '>
-      <SectionDivider 
-        sectionName="Technologies"
-        className='rounded-3xl hover:border-zinc-500 transition-all duration-300 ease-in-out my-[80px]' 
-      />
+      <motion.div
+        style={{opacity,scale:scaleSection}}
+      >
+        <SectionDivider 
+          sectionName="Technologies"
+          className='rounded-3xl hover:border-zinc-500 transition-all duration-300 ease-in-out my-[80px]' 
+        />
+      </motion.div>
 
       <div className='flex flex-wrap justify-center items-center gap-4 '>
         {
@@ -50,7 +64,7 @@ const Techs = () => {
             return(
               <PopOver content={tech.name}>
                 <motion.div
-                  style={{scale:scaleTech,...xTranslate(index)}}
+                  style={{scale:scaleTech,...xTranslate(index),opacity}}
                 >
                   <Tech 
                     key={index}

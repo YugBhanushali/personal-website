@@ -38,7 +38,10 @@ const Popover = ({
         <div
           className={`popover border-[0px] border-[#515151] backdrop-filter backdrop-blur-2xl ${direction} sm:-top-[75px] -top-[60px] sm:px-[15px] sm:py-[8px] px-[10px] py-[5px] sm:text-[16px] text-[12px]`}
         >
-          <div className="popover-content">{content}</div>
+          <div className="popover-content flex flex-row">{
+            content.split(" ").length === 2 ? content.split(" ").map((word)=><span className='mx-1'>{word}</span> ): content
+          }
+          </div>
           <div
             className={`arrow-${arrowDirection}`}
             style={{ borderTopColor: arrowColor }}
