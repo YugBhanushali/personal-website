@@ -4,7 +4,7 @@ import Music from './Music'
 
 const LocationAndMusic = () => {
   return (
-    <div className='flex flex-row items-center justify-center gap-10 mt-[100px]'>
+    <div className='flex sm:flex-row flex-col items-center justify-center gap-10 mt-[100px]'>
       <div>
         <Location />
       </div>

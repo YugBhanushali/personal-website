@@ -6,6 +6,7 @@ import { Particles } from "./Particles";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import Demo from "./ui/Demo";
+import { MotionValue, motion } from "framer-motion";
 
 // {
 //   projectId:1,
@@ -47,11 +48,15 @@ import Demo from "./ui/Demo";
 // }
 
 type ProjectCardProps = {
+  key: number;
   projectId: number;
   projectName: string;
   githubLink: string;
   projectLink: string;
   projectImage: string;
+  styleFnc: (index: number) => {
+    x: string | MotionValue<string>;
+  }
   techStack: {
     name: string;
     backgroundColour: string;
@@ -69,8 +74,11 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
     card: false,
   });
 
+  
   return (
-    <div>
+    <motion.div
+      style={projectProps.styleFnc(projectProps.projectId)}
+    >
       {/* <div className='flex flex-col bg-[#ffffff] bg-opacity-[0.16] border-[1.5px] border-[#515151] backdrop-filter backdrop-blur-2xl py-6 px-6 rounded-2xl'> */}
       <div
         className="flex flex-col sm:p-6 p-4 w-[340px] sm:w-[450px] h-full bg-zinc-900 sm:rounded-[15px] rounded-[12px] border-[1px] border-[#4c4c4cc5] hover:bg-white hover:bg-opacity-[0.15] hover:border-[#ffffff6e] duration-500 ease-in-out z-20 overflow-hidden hover:scale-105"
@@ -168,7 +176,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
     
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
