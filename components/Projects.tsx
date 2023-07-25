@@ -25,7 +25,7 @@ const Projects = () => {
   );
 
   const cardOpacity = useTransform(scrollYProgress,
-    [0, isMobile ? 0.1 : 0.3],
+    [0, isMobile ? 0.2 : 0.3],
     [isMobile ? 0 : 0, 1]
   );
 
@@ -55,7 +55,7 @@ const Projects = () => {
   }
 
   return (
-    <div ref={targetRef} id='projects' className='flex flex-col gap-6 items-center mt-[100px]'>
+    <div ref={targetRef} id={"projects"} className='flex flex-col gap-6 items-center mt-[100px]'>
       <motion.div 
         initial={{opacity:0}}
         animate={{opacity:1}}

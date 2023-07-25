@@ -20,12 +20,12 @@ const LocationAndMusic = () => {
 
   const scale = useTransform(scrollYProgress,
     [0, isMobile ? 0.3 : 0.5],
-    [isMobile ? 1.4: 1.5, 0.9]
+    [isMobile ? 1.1: 1.5, 0.9]
   );
 
 
   return (
-    <div ref={targetRef} className='flex sm:flex-row flex-col items-center justify-center sm:gap-8 gap-0 mt-[100px]'>
+    <div ref={targetRef} id='about' className='flex sm:flex-row flex-col items-center justify-center sm:gap-8 gap-0 mt-[100px]'>
       <motion.div
         style={{ opacity, scale }}
       >
