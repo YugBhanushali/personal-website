@@ -96,7 +96,7 @@ const Socials = () => {
 
     const iconScale = useTransform(scrollYProgress,[0, 0.5], [1.3, 1])
   return (
-    <div ref={targetRef} id="contact" className='flex flex-col justify-center items-center'>
+    <div ref={targetRef} className='flex flex-col justify-center items-center'>
         <motion.div
             style={{opacity,scale}}
         >

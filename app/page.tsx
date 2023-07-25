@@ -1,12 +1,12 @@
 'use client'
 
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import { HighlightGroup, HighlighterItem } from '@/components/Highlighter'
 import Location from '@/components/Location'
 import LocationAndMusic from '@/components/LocationAndMusic'
 import { Particles } from '@/components/Particles'
-import { Pricing } from '@/components/Pricing'
 import Projects from '@/components/Projects'
 import Socials from '@/components/Socials'
 import Techs from '@/components/Techs'
@@ -33,6 +33,8 @@ export default function Home() {
       <Tools />
 
       <LocationAndMusic />
+
+      <Contact />
 
       <Socials />
 
