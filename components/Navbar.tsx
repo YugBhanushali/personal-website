@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import logo from "../public/PW-logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { position, transition } from "@chakra-ui/react";
+import { position, transition,useMediaQuery } from "@chakra-ui/react";
 
 const Navbar = () => {
   // State to keep track of whether the logo is clicked or not
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const [isLogoClickedMobile, setIsLogoClickedMobile] = useState(false);
   const [onTransitionEnd, setOnTransitionEnd] = useState(false);
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useMediaQuery("(max-width: 768px)")[0];
 
   const handleTransitionEnd = () => {
     if (isLogoClicked) {

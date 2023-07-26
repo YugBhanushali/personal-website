@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import Loading from "./ui/Loading";
 import SectionDivider from "./SectionDivider";
+import { useMediaQuery } from "@chakra-ui/react";
 
 
 const Contact = () => {
@@ -14,7 +15,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
 
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useMediaQuery("(max-width: 768px)")[0];
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -78,16 +79,16 @@ const Contact = () => {
             required
             type="text"
             id="name"
-            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
+            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
             name="name"
           />
 
           <motion.input
-            placeholder="example@gmail.com"
+            placeholder="Email"
             required
             type="email"
             id="email"
-            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
+            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
             name="email"
           />
 
@@ -96,7 +97,7 @@ const Contact = () => {
             required
             type="text"
             id="subject"
-            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
+            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
             name="subject"
           />
 

@@ -1,10 +1,11 @@
 import { tecnologiesData } from '@/utils/Constants';
+import { useMediaQuery } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react'
 
 const Tech = (tech:{boxShadow:string, image:string}) => {
     const [isHovered, setIsHovered] = React.useState(false);
-    const isMobile = window.innerWidth < 768;
+    const isMobile = useMediaQuery("(max-width: 768px)")[0];
   return (
     <>
       <div className='flex'>

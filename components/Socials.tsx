@@ -4,6 +4,7 @@ import { socialLinks } from '@/utils/Constants'
 import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import Link from 'next/link'
 import { useScroll, useTransform,motion } from 'framer-motion'
+import { useMediaQuery } from '@chakra-ui/react'
 
 //make a icon component which takes the app name and return the react-icons component
 type IconDivProps = {
@@ -83,7 +84,7 @@ const Icon = ({name,id,socialLink}:{name:string,id:number,socialLink:string}) =>
 
 const Socials = () => {
     const targetRef = React.useRef<HTMLDivElement>(null)
-    const isMobile = window.innerWidth < 768
+    const isMobile = useMediaQuery("(max-width: 768px)")[0];
 
     const { scrollYProgress } = useScroll({
         target: targetRef,

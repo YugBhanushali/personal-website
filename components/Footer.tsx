@@ -2,6 +2,7 @@ import React from 'react'
 import { Abril_Fatface, Andika, Arvo, Lato } from 'next/font/google'
 import Link from 'next/link'
 import { useScroll, useTransform,motion } from 'framer-motion'
+import { useMediaQuery } from '@chakra-ui/react'
 
 const arvo = Lato({
     display: 'swap',
@@ -12,7 +13,7 @@ const arvo = Lato({
 const Footer = () => {
 
   const targetRef = React.useRef<HTMLDivElement>(null)
-  const isMobile = window.innerWidth < 768
+  const isMobile = useMediaQuery("(max-width: 768px)")[0];
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"],

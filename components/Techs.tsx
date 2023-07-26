@@ -4,11 +4,12 @@ import Tech from './Tech'
 import { tecnologiesData } from '@/utils/Constants'
 import PopOver from './ui/Popover'
 import { useScroll,motion, useTransform } from 'framer-motion'
+import { useMediaQuery } from '@chakra-ui/react'
 
 const Techs = () => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useMediaQuery("(max-width: 768px)")[0];
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"]
@@ -60,7 +61,6 @@ const Techs = () => {
       <div className='flex flex-wrap justify-center items-center gap-4 '>
         {
           tecnologiesData.map((tech, index) => {
-            console.log(index);
             return(
               <PopOver content={tech.name}>
                 <motion.div

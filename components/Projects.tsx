@@ -4,11 +4,12 @@ import { projectCardData } from '@/utils/Constants'
 import SectionDivider from './SectionDivider'
 import { Particles } from './Particles'
 import { useScroll,motion, useTransform, MotionValue } from 'framer-motion'
+import { useMediaQuery } from '@chakra-ui/react'
 
 const Projects = () => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useMediaQuery("(max-width: 768px)")[0];
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"]
