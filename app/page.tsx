@@ -2,6 +2,7 @@
 
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import GithubAndResume from '@/components/GithubAndResume'
 import Hero from '@/components/Hero'
 import { HighlightGroup, HighlighterItem } from '@/components/Highlighter'
 import Location from '@/components/Location'
@@ -37,6 +38,8 @@ export default function Home() {
       <Contact />
 
       <Socials />
+
+      <GithubAndResume />
 
       <Footer />
     </main>
