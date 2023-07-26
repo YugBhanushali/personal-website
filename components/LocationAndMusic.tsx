@@ -6,7 +6,9 @@ import { useMediaQuery } from '@chakra-ui/react';
 
 const LocationAndMusic = () => {
 
-  const isMobile = useMediaQuery("(max-width: 768px)")[0];
+  const test = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+  const isMobileView = test < 768;
   const targetRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -15,13 +17,13 @@ const LocationAndMusic = () => {
   });
 
   const opacity = useTransform(scrollYProgress,
-    [0, isMobile ? 0.2 : 0.5],
+    [0, isMobileView ? 0.2 : 0.5],
     [0, 1]
   );
 
   const scale = useTransform(scrollYProgress,
-    [0, isMobile ? 0.3 : 0.5],
-    [isMobile ? 1.1: 1.5, 0.9]
+    [0, isMobileView ? 0.3 : 0.5],
+    [isMobileView ? 1.1: 1.5, 0.9]
   );
 
 

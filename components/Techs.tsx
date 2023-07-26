@@ -9,7 +9,9 @@ import { useMediaQuery } from '@chakra-ui/react'
 const Techs = () => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
-  const isMobile = useMediaQuery("(max-width: 768px)")[0];
+  const test = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+  const isMobileView = test < 768;
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"]
@@ -32,11 +34,11 @@ const Techs = () => {
 
   const scaleTech = useTransform(scrollYProgress,
     [0, 0.4],
-    [isMobile ? 1 : 1.8,1]
+    [isMobileView ? 1 : 1.8,1]
   );
 
   const xTranslate =(index:number)=> {
-    const x = isMobile ? "" : index < 5  ? xTechLeft : xTechRight;
+    const x = isMobileView ? "" : index < 5  ? xTechLeft : xTechRight;
     return {x}
   }
 

@@ -15,7 +15,9 @@ const Contact = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
 
-  const isMobile = useMediaQuery("(max-width: 768px)")[0];
+  const test = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+  const isMobileView = test < 768;
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -26,7 +28,7 @@ const Contact = () => {
 
   const scaleSection = useTransform(scrollYProgress, [0, 0.5], [1.5, 1]);
 
-  const scaleForm = useTransform(scrollYProgress, [0, 0.5], [isMobile ? 1.1: 1.3, 1]);
+  const scaleForm = useTransform(scrollYProgress, [0, 0.5], [isMobileView ? 1.1: 1.3, 1]);
 
   const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

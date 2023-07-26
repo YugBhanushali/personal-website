@@ -56,7 +56,6 @@ const Hero = () => {
         <div className="mt-[50px] sm:w-[500px] w-[300px] sm:text-[22px] text-[19px] justify-center text-center">
           <motion.div className="flex flex-wrap items-center justify-center">
             {HeroTitle.map((title, index) => {
-              console.log(scrollYProgress);
               return (
               <motion.span
                 key={index}

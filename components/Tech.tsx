@@ -5,7 +5,9 @@ import React from 'react'
 
 const Tech = (tech:{boxShadow:string, image:string}) => {
     const [isHovered, setIsHovered] = React.useState(false);
-    const isMobile = useMediaQuery("(max-width: 768px)")[0];
+    const test = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+    const isMobileView = test < 768;
   return (
     <>
       <div className='flex'>
@@ -21,8 +23,8 @@ const Tech = (tech:{boxShadow:string, image:string}) => {
               <Image
                   src={tech.image}
                   alt='Picture of the author'
-                  width={isMobile ? 30 : 40}
-                  height={isMobile ? 30 : 40}
+                  width={isMobileView ? 30 : 40}
+                  height={isMobileView ? 30 : 40}
                   className='duration-500 ease-in-out hover:scale-105'
               />
           </div>

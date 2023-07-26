@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import ProjectCard from './ProjectCard'
 import { projectCardData } from '@/utils/Constants'
 import SectionDivider from './SectionDivider'
@@ -9,7 +9,12 @@ import { useMediaQuery } from '@chakra-ui/react'
 const Projects = () => {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
-  const isMobile = useMediaQuery("(max-width: 768px)")[0];
+
+  const test = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+  const isMobileView = test < 768;
+
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"]
@@ -26,8 +31,8 @@ const Projects = () => {
   );
 
   const cardOpacity = useTransform(scrollYProgress,
-    [0, isMobile ? 0.2 : 0.3],
-    [isMobile ? 0 : 0, 1]
+    [0, isMobileView ? 0.2 : 0.3],
+    [isMobileView ? 0 : 0, 1]
   );
 
   const cardGap = useTransform(scrollYProgress,
@@ -37,7 +42,7 @@ const Projects = () => {
 
   const cardScale = useTransform(scrollYProgress,
     [0, 0.4],
-    [isMobile ? 1 : 1.8,1]
+    [isMobileView ? 1 : 1.8,1]
   );
 
   const xOdd = useTransform(scrollYProgress,
@@ -51,9 +56,10 @@ const Projects = () => {
   );
 
   const xTranslate =(index:number)=> {
-    const x = isMobile ? "" : index % 2=== 0 ? xOdd : xEven;
+    const x = isMobileView ? "" : index % 2=== 0 ? xOdd : xEven;
     return {x}
   }
+
 
   return (
     <div ref={targetRef} id={"projects"} className='flex flex-col gap-6 items-center mt-[100px]'>

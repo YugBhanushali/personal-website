@@ -5,13 +5,13 @@ import logo from "../public/PW-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { position, transition,useMediaQuery } from "@chakra-ui/react";
+import { isMobile } from "react-device-detect";
 
 const Navbar = () => {
   // State to keep track of whether the logo is clicked or not
   const [isLogoClicked, setIsLogoClicked] = useState(false);
   const [isLogoClickedMobile, setIsLogoClickedMobile] = useState(false);
   const [onTransitionEnd, setOnTransitionEnd] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 768px)")[0];
 
   const handleTransitionEnd = () => {
     if (isLogoClicked) {
@@ -92,9 +92,9 @@ const Navbar = () => {
             id="home"
             className={`flex flex-col sticky top-0 items-center py-2 font-bold z-40 bg-gray-700 bg-opacity-[0.1] h-[60px] duration-800 ease-in backdrop-blur-md`}
         >
-                {/* logo */}
-                <div
-                >
+              {/* logo */}
+              <div
+              >
                   <motion.div
                     initial={false}
                     animate={isLogoClickedMobile ? "open" : "close"}
@@ -111,7 +111,7 @@ const Navbar = () => {
                       }}
                     />
                   </motion.div>
-                </div>
+              </div>
 
                 {/* links */}
                 <motion.div
@@ -119,7 +119,7 @@ const Navbar = () => {
                   animate={isLogoClickedMobile ? "opened" : "closed"}
                   variants={NavBarVarient}
                   className="flex relative flex-col justify-center items-center my-1 gap-y-3 w-full bg-[white] bg-opacity-[0.1] backdrop-blur-[50px] py-4"
-                >   
+                >  
                   <motion.div
                     variants={NavBarChildVarient}
                     style={{ cursor: "pointer" ,background:'transparent'}}
@@ -153,6 +153,7 @@ const Navbar = () => {
                   >
                     Contact
                   </motion.div>
+
                 </motion.div>
         </div>
       ) : (

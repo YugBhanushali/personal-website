@@ -13,15 +13,17 @@ const arvo = Lato({
 const Footer = () => {
 
   const targetRef = React.useRef<HTMLDivElement>(null)
-  const isMobile = useMediaQuery("(max-width: 768px)")[0];
+  const test = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+  const isMobileView = test < 768;
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"],
   })
 
-  const yTranslate = useTransform(scrollYProgress,[0, isMobile ? 0.02 : 0.2], [ isMobile ? "-60px" : "-100px","0px"])
+  const yTranslate = useTransform(scrollYProgress,[0, isMobileView ? 0.02 : 0.2], [ isMobileView ? "-60px" : "-100px","0px"])
 
-  const opacity = useTransform(scrollYProgress,[0, isMobile ? 0 : 0.1], [0, 1])
+  const opacity = useTransform(scrollYProgress,[0, isMobileView ? 0 : 0.1], [0, 1])
 
   return (
     <div ref={targetRef} className={`flex flex-col justify-center items-center mt-10 mb-2`}>
