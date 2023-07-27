@@ -21,6 +21,7 @@ const IconDiv = ({boxShadow,isHovered,setIsHovered,children,socialLink}:IconDivP
             href={socialLink}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            target='/'
         >
             <div 
                 className='sm:p-6 p-4 justify-center items-center sm:rounded-3xl rounded-2xl bg-white bg-opacity-[0.1] backdrop-blur-[3px] hover:bg-white hover:bg-opacity-[0.16] transition-all duration-300 ease-in-out'

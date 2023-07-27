@@ -99,7 +99,7 @@ export const projectCardData =[
         projectId:2,
         projectName:"ZipURL",
         githubLink:"https://github.com/YugBhanushali/ZipURL",
-        projectLink:"https://zipurl.tech/",
+        projectLink:"https://zipurl.vercel.app/",
         projectImage:"/assets/zipurl-home.png",
         techStack:[
             {

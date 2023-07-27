@@ -45,7 +45,7 @@ const GithubAndResume = () => {
     <motion.div
         style={{opacity,scale}}
     >
-    <Link href="https://github.com/YugBhanushali/personal-website">
+    <Link href="https://github.com/YugBhanushali/personal-website" target='/'>
         <button
             className="bg-[#28282a97] gap-x-2 px-5 py-2 sm:w-[150px] w-[130px] border-[#343437] border-[1px] rounded-md text-white focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px] hover:bg-[#27272A] hover:border-[#39393c] transition duration-300 ease-in-out flex flex-row justify-center items-center"
         >

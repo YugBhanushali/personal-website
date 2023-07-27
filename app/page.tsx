@@ -11,29 +11,33 @@ import Socials from '@/components/Socials'
 import Techs from '@/components/Techs'
 import Tools from '@/components/Tools'
 import PreLoader from '@/components/ui/PreLoader'
+import { useRef } from 'react'
 
 export default function Home() {
+
+  const targetRef = useRef<HTMLDivElement>(null)
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-24">
-      <Particles className="absolute inset-0 -z-10 w-full h-full " />
-      <Particles className="absolute inset-0 -z-10 w-full h-full " />
-      <Hero />
+    <main  className="flex min-h-screen flex-col items-center justify-between px-24">
+      <div ref={targetRef} className="flex flex-col min-h-screen items-center justify-between">
+          <Particles quantity={400} containerRef={targetRef} className="absolute inset-0 -z-10 w-full h-full " />
+          <Hero />
 
-      <Projects />
+          <Projects />
 
-      <Techs />
+          <Techs />
 
-      <Tools />
+          <Tools />
 
-      <LocationAndMusic />
+          <LocationAndMusic />
 
-      <Contact />
+          <Contact />
 
-      <Socials />
+          <Socials />
 
-      <GithubAndResume />
+          <GithubAndResume />
 
-      <Footer />
+          <Footer />
+      </div>
     </main>
   )
 }

@@ -4,13 +4,14 @@ import MousePosition from "@/utils/MouseMotion";
 
 interface ParticlesProps {
   className?: string;
-  quantity?: number;
+  quantity: number;
   staticity?: number;
   ease?: number;
   refresh?: boolean;
   color?: string;
   vx?: number;
   vy?: number;
+  containerRef?: React.MutableRefObject<HTMLDivElement | null>;
 }
 function hexToRgb(hex: string): number[] {
   // Remove the "#" character from the beginning of the hex color code
@@ -30,16 +31,17 @@ function hexToRgb(hex: string): number[] {
 
 export const Particles: React.FC<ParticlesProps> = ({
   className = "",
-  quantity = 30,
+  quantity,
   staticity = 50,
   ease = 50,
   refresh = false,
   color = "#ffffff",
   vx = 0,
   vy = 0,
+  containerRef,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const canvasContainerRef = useRef<HTMLDivElement>(null);
+  const canvasContainerRef = containerRef || useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const circles = useRef<any[]>([]);
   const mousePosition = MousePosition();

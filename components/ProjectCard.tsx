@@ -103,7 +103,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
         {/* Title of project , github link, link of site */}
         <div className="flex justify-between items-center mt-4">
           <div className=" bg-transparent">
-            <Link href={projectProps.githubLink} className=" bg-transparent">
+            <Link href={projectProps.githubLink} className=" bg-transparent" target={"/"}>
               <FiGithub
                 className="hover:scale-[1.2] duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4"
                 color={isHovered.github ? "#0CCE6B" : "#ffffff"}
@@ -124,7 +124,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
           <div className="sm:text-[18px] text-[15px] font-bold">{projectProps.projectName}</div>
 
           <div>
-            <Link href={projectProps.projectLink}>
+            <Link href={projectProps.projectLink} target="/">
               <FiExternalLink
                 className="hover:scale-[1.2] duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4"
                 color={isHovered.site ? "#0CCE6B" : "#ffffff"}
