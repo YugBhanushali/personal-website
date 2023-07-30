@@ -1,3 +1,4 @@
+'use client'
 import { Spinner } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import Hero from '../Hero'
@@ -9,8 +10,10 @@ import Socials from '../Socials'
 import GithubAndResume from '../GithubAndResume'
 import Footer from '../Footer'
 import Contact from '../Contact'
+import { Particles } from '../Particles'
 
 const PreLoader = () => {
+    const targetRef = React.useRef<HTMLDivElement>(null);
     const [isLoading, setIsLoading] = React.useState(true)
 
     useEffect(() => {
@@ -34,30 +37,35 @@ const PreLoader = () => {
       {
             isLoading 
             ?
-            <div>
+            <div className='h-screen flex items-center justify-center'>
                 <Spinner
-                    size={"50"}
+                    height={30}
+                    width={30}
                 />
             </div>
             :
             <div className='flex flex-col justify-center items-center'>
-               <Hero />
+                <div ref={targetRef} className='flex flex-col justify-between items-center'>
+                    <Particles quantity={350} containerRef={targetRef} className="absolute inset-0 -z-10 w-full " />
 
-                <Projects />
+                    <Hero />
 
-                <Techs />
+                    <Projects />
 
-                <Tools />
+                    <Techs />
 
-                <LocationAndMusic />
+                    <Tools />
 
-                <Contact />
+                    <LocationAndMusic />
 
-                <Socials />
+                    <Contact />
 
-                <GithubAndResume />
+                    <Socials />
 
-                <Footer/> 
+                    <GithubAndResume />
+
+                    <Footer />
+                </div>
             </div>
       }
     </div>

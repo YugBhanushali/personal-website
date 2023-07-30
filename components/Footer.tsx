@@ -21,12 +21,12 @@ const Footer = () => {
     offset: ["start end", "end start"],
   })
 
-  const yTranslate = useTransform(scrollYProgress,[0, isMobileView ? 0.02 : 0.2], [ isMobileView ? "-60px" : "-100px","0px"])
+  const yTranslate = useTransform(scrollYProgress,[0, isMobileView ? 0.02 : 0.2], [ isMobileView ? "-60px" : "-100px","30px"])
 
   const opacity = useTransform(scrollYProgress,[0, isMobileView ? 0 : 0.1], [0, 1])
 
   return (
-    <div ref={targetRef} className={`flex flex-col justify-center items-center mt-10 mb-2`}>
+    <div ref={targetRef} className={`flex flex-col justify-center items-center mt-10 mb-0`}>
       <motion.div
           style={{y: yTranslate,opacity}}
       >
