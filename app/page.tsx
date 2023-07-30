@@ -11,8 +11,7 @@ import Socials from '@/components/Socials'
 import Techs from '@/components/Techs'
 import Tools from '@/components/Tools'
 import PreLoader from '@/components/ui/PreLoader'
-import { useRef } from 'react'
-import { isMobile } from 'react-device-detect'
+import { use, useEffect, useRef } from 'react'
 
 export default function Home() {
 
@@ -20,13 +19,8 @@ export default function Home() {
   return (
     <main  className="flex flex-col items-center justify-between px-24">
       <div ref={targetRef} className="flex flex-col items-center justify-between">
-          {
-            isMobile 
-            ?
-            <Particles quantity={100} containerRef={targetRef} className="absolute inset-0 -z-10 w-full h-full " />
-            :
-            <Particles quantity={400} containerRef={targetRef} className="absolute inset-0 -z-10 w-full h-full " />
-          }
+          <Particles quantity={350} containerRef={targetRef} className="absolute inset-0 -z-10 w-full " />
+
           <Hero />
 
           <Projects />
