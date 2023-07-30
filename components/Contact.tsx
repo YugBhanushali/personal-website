@@ -81,7 +81,7 @@ const Contact = () => {
             required
             type="text"
             id="name"
-            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
+            className=" px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px] bg-white bg-opacity-[0.02] backdrop-blur-[2px]"
             name="name"
           />
 
@@ -90,7 +90,7 @@ const Contact = () => {
             required
             type="email"
             id="email"
-            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
+            className=" px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px] bg-white bg-opacity-[0.02] backdrop-blur-[2px]"
             name="email"
           />
 
@@ -99,7 +99,7 @@ const Contact = () => {
             required
             type="text"
             id="subject"
-            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
+            className=" px-5 py-2 w-[350px] border-[#27272A] border-[1.5px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px] bg-white bg-opacity-[0.02] backdrop-blur-[2px]"
             name="subject"
           />
 
@@ -109,7 +109,7 @@ const Contact = () => {
             id="message"
             name="message"
             rows={5}
-            className="bg-transparent px-5 py-2 w-[350px] border-[#27272A] border-[1px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px]"
+            className=" px-5 py-2 w-[350px] border-[#27272A] border-[1px] rounded-md placeholder-gray-500 focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px] bg-white bg-opacity-[0.02] backdrop-blur-[2px]"
           ></motion.textarea>
 
           <motion.button

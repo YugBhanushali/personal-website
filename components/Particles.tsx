@@ -107,7 +107,7 @@ export const Particles: React.FC<ParticlesProps> = ({
       console.log(canvasSize);
       circles.current.length = 0;
       canvasSize.current.w = canvasContainerRef.current.offsetWidth ;
-      canvasSize.current.h = canvasContainerRef.current.offsetHeight-300;
+      canvasSize.current.h = canvasContainerRef.current.offsetHeight-550;
       canvasRef.current.width = canvasSize.current.w * dpr;
       canvasRef.current.height = canvasSize.current.h * dpr;
       canvasRef.current.style.width = `${canvasSize.current.w}px`;

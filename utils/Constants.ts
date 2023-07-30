@@ -180,6 +180,59 @@ export const projectCardData =[
     },
     {
         projectId:4,
+        projectName:"Colour Codes",
+        githubLink:"",
+        projectLink:"https://colourcodes.vercel.app/",
+        projectImage:"/assets/colour-codes.png",
+        techStack:[
+            {
+                name:"Next.js",
+                backgroundColour:"#9100006e",
+                borderColour:"#5f2101cc",
+                borderColourHover:"#c81717",
+                icon:"/assets/tech-logos/nextjs.png"
+            },
+            {
+                name:"typescript",
+                backgroundColour:"#007acc3b",
+                borderColour:"#02476ecc",
+                borderColourHover:"#007acc",
+                icon:"https://img.icons8.com/color/48/000000/typescript.png"
+            },
+            {   
+                name:"tailwindcss",
+                backgroundColour:"#06b6d43b",
+                borderColour:"#004959cc",
+                borderColourHover:"#06b6d4",
+                icon:"/assets/tech-logos/tailwindcss.png"
+            }
+        ]
+    },
+    {
+        projectId:5,
+        projectName:"colour-codes",
+        githubLink:"https://github.com/YugBhanushali/colour-codes-npm-package",
+        projectLink:"https://www.npmjs.com/package/colour-codes",
+        projectImage:"/assets/colour-codes-pkg-home.png",
+        techStack:[
+            {
+                name:"TypeScript",
+                backgroundColour:"#007acc3b",
+                borderColour:"#02476ecc",
+                borderColourHover:"#007acc",
+                icon: "https://img.icons8.com/color/48/000000/typescript.png",
+            },
+            {
+                name:"npm",
+                backgroundColour:"#ff00003b",
+                borderColour:"#7a0000cc",
+                borderColourHover:"#ff0000",
+                icon:"/assets/tech-logos/npm-logos.png",
+            }
+        ]
+    },
+    {
+        projectId:6,
         projectName:"SGPA Calculator",
         githubLink:"https://github.com/YugBhanushali/SGPA-Calculator",
         projectLink:"https://sgpa-calculators.vercel.app/",
@@ -324,13 +377,6 @@ export const musicData = [
         artist:"Hans Zimmer",
         image:"/assets/music/images/interstellar.jpg",
         audio:"/assets/music/audio/interstellar.mp3"
-    },
-    {
-        id:2,
-        name:"Make you mine",
-        artist:"Public",
-        image:"/assets/music/images/make-you-mine.jpg",
-        audio:"/assets/music/audio/make-you-mine.mp3"
     },
 ]
 

@@ -8,44 +8,6 @@ import Link from "next/link";
 import Demo from "./ui/Demo";
 import { MotionValue, motion } from "framer-motion";
 
-// {
-//   projectId:1,
-//   projectName:"Code to Image",
-//   githubLink:"https://github.com/YugBhanushali/code-to-image",
-//   projectLink:"https://codetoimg.vercel.app/",
-//   projectImage:"../public/assets/code-to-image-home.png",
-//   techStack:[
-//       {
-//           name:"React",
-//           backgroundColour:"#21bad551",
-//           borderColour:"#024149",
-//           borderColourHover:"#088090",
-//           icon:"https://img.icons8.com/color/48/000000/react-native.png"
-//       },
-//       //use different colour for different tech stack
-//       {
-//           name:"Next",
-//           backgroundColour:"#21bad551",
-//           borderColour:"#024149",
-//           borderColourHover:"#088090",
-//           icon:"https://img.icons8.com/color/48/000000/nextjs.png"
-//       },
-//       {
-//           name:"Typescript",
-//           backgroundColour:"#21bad551",
-//           borderColour:"#024149",
-//           borderColourHover:"#088090",
-//           icon:"https://img.icons8.com/color/48/000000/typescript.png"
-//       },
-//       {
-//           name:"Tailwind",
-//           backgroundColour:"#21bad551",
-//           borderColour:"#024149",
-//           borderColourHover:"#088090",
-//           icon:"https://img.icons8.com/color/48/000000/tailwind-css.png"
-//       },
-//   ],
-// }
 
 type ProjectCardProps = {
   key: number;
@@ -105,18 +67,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
           <div className=" bg-transparent">
             <Link href={projectProps.githubLink} className=" bg-transparent" target={"/"}>
               <FiGithub
-                className="hover:scale-[1.2] duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4"
-                color={isHovered.github ? "#0CCE6B" : "#ffffff"}
-                onMouseEnter={() =>
-                  setIsHovered(() => {
-                    return { ...isHovered, github: true };
-                  })
-                }
-                onMouseLeave={() =>
-                  setIsHovered(() => {
-                    return { ...isHovered, github: false };
-                  })
-                }
+                className="hover:scale-[1.2] text-white duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4 hover:text-[#0CCE6B]"
               />
             </Link>
           </div>
@@ -126,18 +77,7 @@ const ProjectCard = (projectProps:ProjectCardProps) => {
           <div>
             <Link href={projectProps.projectLink} target="/">
               <FiExternalLink
-                className="hover:scale-[1.2] duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4"
-                color={isHovered.site ? "#0CCE6B" : "#ffffff"}
-                onMouseEnter={() =>
-                  setIsHovered(() => {
-                    return { ...isHovered, site: true };
-                  })
-                }
-                onMouseLeave={() =>
-                  setIsHovered(() => {
-                    return { ...isHovered, site: false };
-                  })
-                }
+                className="hover:scale-[1.2] duration-500 ease-in-out sm:h-6 sm:w-6 h-4 w-4 text-white hover:text-[#0CCE6B]"
               />
             </Link>
           </div>
