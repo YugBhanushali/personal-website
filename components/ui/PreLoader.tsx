@@ -37,7 +37,7 @@ const PreLoader = () => {
       {
             isLoading 
             ?
-            <div className='h-screen flex items-center justify-center'>
+            <div className='mt-[300px]'>
                 <Spinner
                     height={30}
                     width={30}

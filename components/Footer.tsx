@@ -26,7 +26,7 @@ const Footer = () => {
   const opacity = useTransform(scrollYProgress,[0, isMobileView ? 0 : 0.1], [0, 1])
 
   return (
-    <div ref={targetRef} className={`flex flex-col justify-center items-center mt-10 mb-0`}>
+    <div ref={targetRef} className={`flex flex-col justify-center items-center mt-10 sm:mb-0 mb-5`}>
       <motion.div
           style={{y: yTranslate,opacity}}
       >
