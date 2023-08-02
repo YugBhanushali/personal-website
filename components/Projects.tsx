@@ -31,7 +31,7 @@ const Projects = () => {
   );
 
   const cardOpacity = useTransform(scrollYProgress,
-    [0, isMobileView ? 0.2 : 0.3],
+    [0, isMobileView ? 0.2 : 0.4],
     [isMobileView ? 0 : 0, 1]
   );
 
@@ -41,18 +41,18 @@ const Projects = () => {
   );
 
   const cardScale = useTransform(scrollYProgress,
-    [0, 0.4],
-    [isMobileView ? 1 : 1.8,1]
+    [0, 0.35],
+    [isMobileView ? 1 : 0 ,1]
   );
 
   const xOdd = useTransform(scrollYProgress,
-    [0, 0.4],
-    ["-900px", "0px"]
+    [0, 0],
+    ["-200px", "0px"]
   );
 
   const xEven = useTransform(scrollYProgress,
-    [0, 0.4],
-    ["900px", "-0px"]
+    [0, 0],
+    ["200px", "-0px"]
   );
 
   const xTranslate =(index:number)=> {

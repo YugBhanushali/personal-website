@@ -13,7 +13,7 @@ import Contact from '../Contact'
 import { Particles } from '../Particles'
 
 const PreLoader = () => {
-    const targetRef = React.useRef<HTMLDivElement>(null);
+    const targetRef = React.useRef<HTMLDivElement | null>(null);
     const [isLoading, setIsLoading] = React.useState(true)
 
     useEffect(() => {

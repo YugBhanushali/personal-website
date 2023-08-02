@@ -22,6 +22,27 @@ body {
   color: aliceblue;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff3a; 
+  filter: blur(3px);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .hero{
   box-shadow: 0px 0px 7px 4px rgba(11, 255, 6, 0.25);
 }
