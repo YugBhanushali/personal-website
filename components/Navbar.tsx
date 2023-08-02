@@ -135,11 +135,11 @@ const Navbar = () => {
                     variants={NavBarChildVarient}
                     style={{ cursor: "pointer" }}
                     onClick={() => {
-                      handleScrollToDiv("about");
+                      handleScrollToDiv("tech");
                       setIsLogoClickedMobile(!isLogoClickedMobile)
                     }}
                   >
-                    About
+                    Tech
                   </motion.div>
 
                   <motion.div
@@ -234,10 +234,10 @@ const Navbar = () => {
                 cursor: "pointer",
               }}
               onClick={() => {
-                handleScrollToDiv("about");
+                handleScrollToDiv("tech");
               }}
             >
-              About
+              Tech
             </motion.div>
           </div>
 

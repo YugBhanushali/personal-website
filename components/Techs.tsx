@@ -50,7 +50,7 @@ const Techs = () => {
 
     
   return (
-    <div ref={targetRef} className='flex flex-col items-center '>
+    <div ref={targetRef} id='tech' className='flex flex-col items-center '>
       <motion.div
         style={{opacity,scale:scaleSection}}
       >

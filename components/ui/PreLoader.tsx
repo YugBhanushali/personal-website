@@ -46,7 +46,7 @@ const PreLoader = () => {
             :
             <div className='flex flex-col justify-center items-center'>
                 <div ref={targetRef} className='flex flex-col justify-between items-center'>
-                    <Particles quantity={350} containerRef={targetRef} className="absolute inset-0 -z-10 w-full " />
+                    <Particles quantity={400} containerRef={targetRef} className="absolute inset-0 -z-10 w-full " />
 
                     <Hero />
 
