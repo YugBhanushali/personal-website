@@ -62,7 +62,7 @@ const Projects = () => {
 
 
   return (
-    <div ref={targetRef} id={"projects"} className='flex flex-col gap-6 items-center mt-[100px] overflow-y-hidden'>
+    <div ref={targetRef} id={"projects"} className='flex flex-col gap-6 items-center mt-[100px]'>
       <motion.div 
         initial={{opacity:0}}
         animate={{opacity:1}}
