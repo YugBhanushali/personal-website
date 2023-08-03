@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="icon.png" type="image/png" />
+        <link rel="viewport" href="width=device-width, initial-scale=1.0" />
       </head>
       <body className={`${JetBrains.className}`}>
         <Navbar />

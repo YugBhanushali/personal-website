@@ -11,6 +11,7 @@ import GithubAndResume from '../GithubAndResume'
 import Footer from '../Footer'
 import Contact from '../Contact'
 import { Particles } from '../Particles'
+import { isMobile } from 'react-device-detect'
 
 const PreLoader = () => {
     const targetRef = React.useRef<HTMLDivElement | null>(null);
@@ -31,9 +32,10 @@ const PreLoader = () => {
                 window.removeEventListener('load', onPageLoad)
             }
         }
+
     }, [])
   return (
-    <div>
+    <div className='flex flex-col justify-center items-center'>
       {
             isLoading 
             ?
@@ -44,9 +46,14 @@ const PreLoader = () => {
                 />
             </div>
             :
-            <div className='flex flex-col justify-center items-center'>
-                <div ref={targetRef} className='flex flex-col justify-between items-center'>
-                    <Particles quantity={400} containerRef={targetRef} className="absolute inset-0 -z-10 w-full " />
+            <div ref={targetRef} className='flex flex-col justify-between items-center'>
+                <div className='flex flex-col justify-between w-full items-center'>
+                    {isMobile
+                    ?
+                        <Particles quantity={200} containerRef={targetRef} className="absolute inset-0 -z-10 w-full h-full " />
+                    :
+                        <Particles quantity={400} containerRef={targetRef} className="absolute inset-0 -z-10 w-full h-full" />
+                    }
 
                     <Hero />
 
