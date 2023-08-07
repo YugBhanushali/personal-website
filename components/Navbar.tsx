@@ -93,25 +93,26 @@ const Navbar = () => {
             className={`flex flex-col sticky top-0 items-center py-2 font-bold z-40 bg-gray-700 bg-opacity-[0.1] h-[60px] duration-800 ease-in backdrop-blur-md`}
         >
               {/* logo */}
-              <div
-              >
+              {/* <div> */}
                   <motion.div
                     initial={false}
                     animate={isLogoClickedMobile ? "open" : "close"}
                     variants={IconVariant}
                     style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      setIsLogoClickedMobile(!isLogoClickedMobile);
+                      }
+                    }
+                    className="flex justify-center items-center"
                   >
                     <Image
                       src={logo}
                       alt="Picture of the author"
                       width={50}
                       height={50}
-                      onClick={() => {
-                        setIsLogoClickedMobile(!isLogoClickedMobile);
-                      }}
                     />
                   </motion.div>
-              </div>
+              {/* </div> */}
 
                 {/* links */}
                 <motion.div

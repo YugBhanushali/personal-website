@@ -1,17 +1,19 @@
-'use client'
+"use client";
+
 import React, { useRef, useEffect } from "react";
 import MousePosition from "@/utils/MouseMotion";
-import { isMobile } from "react-device-detect";
 
 interface ParticlesProps {
   className?: string;
-  quantity: number;
+  quantity?: number;
   staticity?: number;
   ease?: number;
   refresh?: boolean;
   color?: string;
   vx?: number;
   vy?: number;
+  width: number;
+  height: number;
   containerRef?: React.MutableRefObject<HTMLDivElement | null>;
 }
 function hexToRgb(hex: string): number[] {
@@ -30,16 +32,18 @@ function hexToRgb(hex: string): number[] {
   return [red, green, blue];
 }
 
-export const Particles: React.FC<ParticlesProps> = ({
+export const MobileParticles: React.FC<ParticlesProps> = ({
   className = "",
-  quantity,
+  quantity = 30,
   staticity = 50,
   ease = 50,
   refresh = false,
   color = "#ffffff",
   vx = 0,
   vy = 0,
-  containerRef,
+    width,
+    height,
+    containerRef,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = containerRef || useRef<HTMLDivElement>(null);
@@ -106,8 +110,8 @@ export const Particles: React.FC<ParticlesProps> = ({
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0;
-      canvasSize.current.w = document.body.clientWidth;
-      canvasSize.current.h = document.body.clientHeight - 550;
+      canvasSize.current.w = width;
+      canvasSize.current.h = height - 550;
       canvasRef.current.width = canvasSize.current.w * dpr;
       canvasRef.current.height = canvasSize.current.h * dpr;
       canvasRef.current.style.width = `${canvasSize.current.w}px`;
@@ -231,8 +235,8 @@ export const Particles: React.FC<ParticlesProps> = ({
   };
 
   return (
-    <div className={`${className}`} ref={canvasContainerRef} aria-hidden="true">
-      <canvas ref={canvasRef}/>
+    <div className={className} ref={canvasContainerRef} aria-hidden="true">
+      <canvas ref={canvasRef} />
     </div>
   );
 };
