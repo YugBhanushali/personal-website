@@ -84,7 +84,7 @@ const GithubAndResume = () => {
                 exit={{opacity:0}}
                 className="absolute flex justify-center items-center flex-col top-[50px] left-0 w-[150px] bg-[black] border-[#343437] border-[1px] p-1 rounded-md z-10">
                     <a
-                        href="/assets/resume/resume.pdf"
+                        href="/assets/resume/resume1.pdf"
                         download="Yug_Bhanushali_Resume.pdf"
                         target='_blank'
                         rel="noreferrer"
@@ -104,7 +104,7 @@ const GithubAndResume = () => {
 
                     <button
                         className="flex flex-row justify-start items-center gap-x-2 menu-option px-5 py-2 text-white w-full rounded-[4px] text-left hover:bg-[#27272A] hover:border-[#39393c]"
-                        onClick={() => {setIsMenuOpen(false),window.open('/assets/resume/resume.pdf', '_blank');}}
+                        onClick={() => {setIsMenuOpen(false),window.open('/assets/resume/resume1.pdf', '_blank');}}
                     >
                         <span>
                             <MdPreview />

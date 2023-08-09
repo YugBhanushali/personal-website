@@ -6,6 +6,7 @@ export const HeroTitle = [
     "I'm",
     "Yug",
     "a",
+    "full-stack",
     "developer",
     "who",
     "loves",
@@ -14,21 +15,24 @@ export const HeroTitle = [
     "stuff",
     "on",
     "the",
-    "internet",
-    "using",
-    "internet",
-    "and",
+    "internet.",
+    "Also",
     "love",
     "to",
-    "design",
-    "which",
-    "makes",
-    "ux",
-    "more",
-    "smoother",
+    "create",
+    "minimalistic,",
+    "cleaner",
     "and",
-    "cleaner.",
+    "appealing",
+    "UI.",
+    "Which",
+    "makes",
+    "user",
+    "experience",
+    "more",
+    "smoother.",
 ];
+//hey, 👋 i’m yug a full-stack developer who loves to make stuff on the internet and love to create minimalistic, cleaner and appealing ui. which makes user experience more smoother.
 
 const statuType:any = {
     "Active":{
@@ -397,3 +401,5 @@ export const socialLinks = [
         link:"https://www.linkedin.com/in/yug-bhanushali-b3b872224/"
     }
 ]
+
+export const URL_OF_WEBSITE = "https://yugbhanushali.vercel.app";
