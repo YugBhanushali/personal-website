@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import { URL_OF_WEBSITE } from "@/utils/Constants";
-
+import { Analytics } from '@vercel/analytics/react';
 const JetBrains = JetBrains_Mono({
   weight:["400","800"],
   display:"swap",
@@ -81,6 +81,7 @@ export default function RootLayout({
       <body className={`${JetBrains.className}`}>
         <Navbar />
         {children}
+        <Analytics/>
       </body>
     </html>
   );
