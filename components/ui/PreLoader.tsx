@@ -55,7 +55,6 @@ const PreLoader = () => {
             width: window.innerWidth || 0,
             height: 5300 || 0
         })
-        console.log('screenSize', screenSize);
     }
 
 
