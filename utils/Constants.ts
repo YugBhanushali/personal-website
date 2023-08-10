@@ -402,4 +402,4 @@ export const socialLinks = [
     }
 ]
 
-export const URL_OF_WEBSITE = "https://yugbhanushali.vercel.app";
+export const URL_OF_WEBSITE = "https://www.yugbhanushali.me";
