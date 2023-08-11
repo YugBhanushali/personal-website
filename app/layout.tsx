@@ -32,11 +32,13 @@ export default function RootLayout({
 
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <meta name="keywords" content="Yug Bhanushali, Yug, Bhanushali, yug, bhanushali, yugbhanushali, yug bhanushali portfolio, yug bhanushali website, yug bhanushali developer, yug bhanushali developer portfolio, yug bhanushali developer website, yug bhanushali developer portfolio website, yug bhanushali developer website portfolio" />
+
         
         {/* Open Graph */}
         <meta name="og:title" content={TITLE} />
         <meta name="og:description" content={DESCRIPTION} />
-        <meta name="og:image" content="./icon.png" />
+        <meta name="og:image" content={`${URL_OF_WEBSITE}/icon.png`} />
         <meta name="og:type" content="website" />
         <meta name="og:url" content={URL_OF_WEBSITE} />
         <meta name="og:site_name" content={TITLE} />
@@ -45,7 +47,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESCRIPTION} />
-        <meta name="twitter:image" content="./icon.png" />
+        <meta name="twitter:image" content={`${URL_OF_WEBSITE}/icon.png`} />
         <meta name="twitter:url" content={URL_OF_WEBSITE} />
         <meta name="twitter:creator" content="@TheYug03" />
         <meta name="twitter:image:alt" content={TITLE} />
@@ -54,7 +56,7 @@ export default function RootLayout({
         {/* Google */}
         <meta itemProp="name" content={TITLE} />
         <meta itemProp="description" content={DESCRIPTION} />
-        <meta itemProp="image" content="./icon.png" />
+        <meta itemProp="image" content={`${URL_OF_WEBSITE}/icon.png`} />
 
         {/* Robots */}
         <meta name="robots" content="index, follow" />
