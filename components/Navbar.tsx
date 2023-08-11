@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../public/PW-logo.png";
+import logo from "../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { position, transition,useMediaQuery } from "@chakra-ui/react";
