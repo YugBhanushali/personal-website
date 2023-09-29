@@ -310,7 +310,17 @@ export const tecnologiesData = [
         name:"Redux",
         boxShadow:"0px 0px 15px 4px #5b0081",
         image:"/assets/tech-logos/Redux.png"
-    }
+    },
+    {
+        name:"Firebase",
+        boxShadow:"0px 0px 15px 4px #a6a33d",
+        image:"/assets/tech-logos/firebaseLogo.png"
+    },
+    {
+        name:"PostgresSQL",
+        boxShadow:"0px 0px 15px 4px #3b779f",
+        image:"/assets/tech-logos/postgres.png"
+    },
 ]
 
 export const toolsData = [
