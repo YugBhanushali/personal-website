@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import SectionDivider from './SectionDivider'
 import Tech from './Tech'
 import { tecnologiesData } from '@/utils/Constants'
@@ -38,7 +38,7 @@ const Techs = () => {
   );
 
   const xTranslate =(index:number)=> {
-    const x = isMobileView ? "" : index < 5  ? xTechLeft : xTechRight;
+    const x = isMobileView ? "" : index < 6  ? xTechLeft : xTechRight;
     return {x}
   }
 
@@ -47,7 +47,7 @@ const Techs = () => {
     [1.4,1]
   );
 
-
+  const [counter, setcounter] = useState(0)
     
   return (
     <div ref={targetRef} id='tech' className='flex flex-col items-center '>
@@ -60,7 +60,7 @@ const Techs = () => {
         />
       </motion.div>
 
-      <div className='flex flex-wrap justify-center items-center gap-4 '>
+      <div className='sm:grid flex flex-wrap justify-center items-center gap-4 sm:grid-rows-2 sm:grid-cols-6'>
         {
           tecnologiesData.map((tech, index) => {
             return(

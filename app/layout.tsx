@@ -32,7 +32,7 @@ export default function RootLayout({
         <link rel="viewport" href="width=device-width, initial-scale=1.0" />
 
         <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
+        <meta name="description" content={`${DESCRIPTION}`} />
         <meta name="keywords" content="Yug Bhanushali, Yug, Bhanushali, yug, bhanushali, yugbhanushali, yug bhanushali portfolio, yug bhanushali website, yug bhanushali developer, yug bhanushali developer portfolio, yug bhanushali developer website, yug bhanushali developer portfolio website, yug bhanushali developer website portfolio" />
 
         
