@@ -1,22 +1,21 @@
-
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import { URL_OF_WEBSITE } from "@/utils/Constants";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 const JetBrains = JetBrains_Mono({
-  weight:["400","800"],
-  display:"swap",
-  subsets:["latin"]
-})
-
+  weight: ["400", "800"],
+  display: "swap",
+  subsets: ["latin"],
+});
 
 const TITLE = "Yug Bhanushali";
-const DESCRIPTION = "Hi, I'm Yug Bhanushali. I'm a full-stack developer and I love to build things on the internet.";
+const DESCRIPTION =
+  "Hi, I'm Yug Bhanushali. I'm a full-stack developer and I love to build things on the internet.";
 
 export const metadata = {
-  title: {TITLE},
-  description: {DESCRIPTION},
+  title: { TITLE },
+  description: { DESCRIPTION },
 };
 
 export default function RootLayout({
@@ -33,9 +32,11 @@ export default function RootLayout({
 
         <title>{TITLE}</title>
         <meta name="description" content={`${DESCRIPTION}`} />
-        <meta name="keywords" content="Yug Bhanushali, Yug, Bhanushali, yug, bhanushali, yugbhanushali, yug bhanushali portfolio, yug bhanushali website, yug bhanushali developer, yug bhanushali developer portfolio, yug bhanushali developer website, yug bhanushali developer portfolio website, yug bhanushali developer website portfolio" />
+        <meta
+          name="keywords"
+          content="Yug Bhanushali, Yug, Bhanushali, yug, bhanushali, yugbhanushali, yug bhanushali portfolio, yug bhanushali website, yug bhanushali developer, yug bhanushali developer portfolio, yug bhanushali developer website, yug bhanushali developer portfolio website, yug bhanushali developer website portfolio"
+        />
 
-        
         {/* Open Graph */}
         <meta name="og:title" content={TITLE} />
         <meta name="og:description" content={DESCRIPTION} />
@@ -79,12 +80,11 @@ export default function RootLayout({
         <meta name="crawlable" content="index, follow" />
         <meta name="crawlability" content="index, follow" />
         <meta name="crawlability_rank" content="index, follow" />
-
       </head>
       <body className={`${JetBrains.className}`}>
         <Navbar />
         {children}
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );

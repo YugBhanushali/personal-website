@@ -23,19 +23,19 @@ const Footer = () => {
   const yTranslate = useTransform(
     scrollYProgress,
     [0, isMobileView ? 0.02 : 0.2],
-    [isMobileView ? "-60px" : "-100px", "30px"],
+    [isMobileView ? "-60px" : "-100px", "100px"]
   );
 
   const opacity = useTransform(
     scrollYProgress,
     [0, isMobileView ? 0 : 0.1],
-    [0, 1],
+    [0, 1]
   );
 
   return (
     <div
       ref={targetRef}
-      className={`flex flex-col justify-center items-center mt-10 sm:mb-0 mb-5`}
+      className={`flex flex-col justify-center items-center -mt-12 sm:mb-0 mb-5`}
     >
       <motion.div style={{ y: yTranslate, opacity }}>
         <p className="text-transparent flex sm:flex-row flex-col sm:gap-6 justify-center items-center sm:text-[80px] text-[40px] font-bold border-1 border-white bg-clip-text bg-gradient-to-r from-[#7700ff] to-[#6f0066]  duration-300 ease-in-out">
