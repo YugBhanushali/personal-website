@@ -2,21 +2,17 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { MouseEvent } from "react";
 import Tech from "../Tech";
 
-const Demo = (
-  {children,className}
-  :
-  {children:React.ReactNode | string,
-  className:string
-  }
-) => {
+const Demo = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode | string;
+  className: string;
+}) => {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
-  function handleMouseMove({
-    currentTarget,
-    clientX,
-    clientY,
-  }: MouseEvent) {
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     let { left, top } = currentTarget.getBoundingClientRect();
 
     mouseX.set(clientX - left);
@@ -43,6 +39,6 @@ const Demo = (
       {children}
     </div>
   );
-}
+};
 
-export default Demo
+export default Demo;

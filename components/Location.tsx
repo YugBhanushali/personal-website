@@ -31,10 +31,8 @@ const Location = () => {
 
   return (
     <>
-      <Demo
-        className="flex flex-col bg-zinc-900 p-6 rounded-[44px] items-center hover:border-[#ffffff6e] hover:scale-105 duration-500 ease-in-out cursor-pointer"
-      >
-      {/* <div
+      <Demo className="flex flex-col bg-zinc-900 p-6 rounded-[44px] items-center hover:border-[#ffffff6e] hover:scale-105 duration-500 ease-in-out cursor-pointer">
+        {/* <div
         className="flex flex-col bg-zinc-900 p-6 rounded-[44px] items-center hover:bg-white hover:bg-opacity-[0.15] hover:border-[#ffffff6e] hover:scale-105 duration-500 ease-in-out cursor-pointer"
         style={{ outline: "1.5px solid #4c4c4cc5" ,
         boxShadow: isHovered ? `0px 0px 20px 0px #58d68d` : "",}}
@@ -63,7 +61,7 @@ const Location = () => {
             </p>
           </div>
         </div>
-        </Demo>
+      </Demo>
       {/* </div> */}
     </>
   );

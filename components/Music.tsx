@@ -196,7 +196,7 @@ const Music = () => {
               loop
               ref={audioElement}
               src={songs[currentSongIndex].audio}
-              onLoadedMetadata={()=>{
+              onLoadedMetadata={() => {
                 setTotalSongTime(getTotalSongTime());
                 handleVolumeChange(audioElement.current.volume);
               }}

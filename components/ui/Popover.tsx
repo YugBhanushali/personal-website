@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import './Popover.css'; // CSS styles for the popover
+import React, { useState } from "react";
+import "./Popover.css"; // CSS styles for the popover
 
 const Popover = ({
   content,
-  direction = 'top',
-  arrowDirection = 'down',
-  arrowColor = 'rgba(255, 255, 255, 0.16)',
-  children
+  direction = "top",
+  arrowDirection = "down",
+  arrowColor = "rgba(255, 255, 255, 0.16)",
+  children,
 }: {
   content: string;
-  direction?: 'top' | 'bottom' | 'left' | 'right';
-  arrowDirection?: 'up' | 'down' | 'left' | 'right';
+  direction?: "top" | "bottom" | "left" | "right";
+  arrowDirection?: "up" | "down" | "left" | "right";
   arrowColor?: string;
   children: React.ReactNode;
 }) => {
@@ -23,7 +23,6 @@ const Popover = ({
   const handlePopoverLeave = () => {
     setShowPopover(false);
   };
-
 
   return (
     <div className="popover-container">
@@ -38,9 +37,12 @@ const Popover = ({
         <div
           className={`popover border-[0px] border-[#515151] backdrop-filter backdrop-blur-2xl ${direction} sm:-top-[75px] -top-[60px] sm:px-[15px] sm:py-[8px] px-[10px] py-[5px] sm:text-[16px] text-[12px]`}
         >
-          <div className="popover-content flex flex-row">{
-            content.split(" ").length === 2 ? content.split(" ").map((word)=><span className='mx-1'>{word}</span> ): content
-          }
+          <div className="popover-content flex flex-row">
+            {content.split(" ").length === 2
+              ? content
+                  .split(" ")
+                  .map((word) => <span className="mx-1">{word}</span>)
+              : content}
           </div>
           <div
             className={`arrow-${arrowDirection}`}

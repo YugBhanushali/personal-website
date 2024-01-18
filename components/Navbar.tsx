@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import logo from "../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { position, transition,useMediaQuery } from "@chakra-ui/react";
+import { position, transition, useMediaQuery } from "@chakra-ui/react";
 import { isMobile } from "react-device-detect";
 
 const Navbar = () => {
@@ -31,22 +31,22 @@ const Navbar = () => {
   };
 
   const IconVariant = {
-    intial:{
-      rotate:0
+    intial: {
+      rotate: 0,
     },
-    open:{
-      rotate:360,
-      transition:{
-        duration: 0.8
-      }
+    open: {
+      rotate: 360,
+      transition: {
+        duration: 0.8,
+      },
     },
-    close:{
-      rotate : 0,
-      transition:{
-        duration: 0.8
-      }
+    close: {
+      rotate: 0,
+      transition: {
+        duration: 0.8,
+      },
     },
-  }
+  };
 
   const NavBarVarient = {
     opened: {
@@ -57,10 +57,10 @@ const Navbar = () => {
       },
     },
     closed: {
-      top :-200,
+      top: -200,
       transition: {
         when: "afterChildren",
-      }
+      },
     },
   };
 
@@ -85,88 +85,84 @@ const Navbar = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLogoClickedMobile(true)
+      setIsLogoClickedMobile(true);
     }, 3000);
 
     const timer2 = setTimeout(() => {
-      setIsLogoClickedMobile(false)
+      setIsLogoClickedMobile(false);
     }, 7000);
     return () => clearTimeout(timer);
   }, []);
-  
 
   return (
     <>
       {isMobile ? (
         // Mobile
         <div
-            id="home"
-            className={`flex flex-col sticky top-0 items-center py-2 font-bold z-40 bg-gray-700 bg-opacity-[0.1] h-[60px] duration-800 ease-in backdrop-blur-md`}
+          id="home"
+          className={`flex flex-col sticky top-0 items-center py-2 font-bold z-40 bg-gray-700 bg-opacity-[0.1] h-[60px] duration-800 ease-in backdrop-blur-md`}
         >
-              {/* logo */}
-              {/* <div> */}
-                  <motion.div
-                    initial={false}
-                    animate={isLogoClickedMobile ? "open" : "close"}
-                    variants={IconVariant}
-                    style={{ cursor: "pointer" }}
-                    onClick={() => {
-                      setIsLogoClickedMobile(!isLogoClickedMobile);
-                      }
-                    }
-                    className="flex justify-center items-center"
-                  >
-                    <Image
-                      src={logo}
-                      alt="Picture of the author"
-                      width={50}
-                      height={50}
-                    />
-                  </motion.div>
-              {/* </div> */}
+          {/* logo */}
+          {/* <div> */}
+          <motion.div
+            initial={false}
+            animate={isLogoClickedMobile ? "open" : "close"}
+            variants={IconVariant}
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              setIsLogoClickedMobile(!isLogoClickedMobile);
+            }}
+            className="flex justify-center items-center"
+          >
+            <Image
+              src={logo}
+              alt="Picture of the author"
+              width={50}
+              height={50}
+            />
+          </motion.div>
+          {/* </div> */}
 
-                {/* links */}
-                <motion.div
-                  initial={false}
-                  animate={isLogoClickedMobile ? "opened" : "closed"}
-                  variants={NavBarVarient}
-                  className="flex relative flex-col justify-center items-center my-1 gap-y-3 w-full bg-[white] bg-opacity-[0.1] backdrop-blur-[50px] py-4"
-                >  
-                  <motion.div
-                    variants={NavBarChildVarient}
-                    style={{ cursor: "pointer" ,background:'transparent'}}
-                    onClick={() => {
-                      handleScrollToDiv("projects");
-                      setIsLogoClickedMobile(!isLogoClickedMobile);
-                    }}
-                  >
-                    Projects
-                  </motion.div>
+          {/* links */}
+          <motion.div
+            initial={false}
+            animate={isLogoClickedMobile ? "opened" : "closed"}
+            variants={NavBarVarient}
+            className="flex relative flex-col justify-center items-center my-1 gap-y-3 w-full bg-[white] bg-opacity-[0.1] backdrop-blur-[50px] py-4"
+          >
+            <motion.div
+              variants={NavBarChildVarient}
+              style={{ cursor: "pointer", background: "transparent" }}
+              onClick={() => {
+                handleScrollToDiv("projects");
+                setIsLogoClickedMobile(!isLogoClickedMobile);
+              }}
+            >
+              Projects
+            </motion.div>
 
-                  <motion.div
-                    variants={NavBarChildVarient}
-                    style={{ cursor: "pointer" }}
-                    onClick={() => {
-                      handleScrollToDiv("tech");
-                      setIsLogoClickedMobile(!isLogoClickedMobile)
-                    }}
-                  >
-                    Tech
-                  </motion.div>
+            <motion.div
+              variants={NavBarChildVarient}
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                handleScrollToDiv("tech");
+                setIsLogoClickedMobile(!isLogoClickedMobile);
+              }}
+            >
+              Tech
+            </motion.div>
 
-                  <motion.div
-                    variants={NavBarChildVarient}
-                    style={{ cursor: "pointer" }}
-                    onClick={() => {
-                      handleScrollToDiv("contact");
-                      setIsLogoClickedMobile(!isLogoClickedMobile)
-                      
-                    }}
-                  >
-                    Contact
-                  </motion.div>
-
-                </motion.div>
+            <motion.div
+              variants={NavBarChildVarient}
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                handleScrollToDiv("contact");
+                setIsLogoClickedMobile(!isLogoClickedMobile);
+              }}
+            >
+              Contact
+            </motion.div>
+          </motion.div>
         </div>
       ) : (
         // Desktop

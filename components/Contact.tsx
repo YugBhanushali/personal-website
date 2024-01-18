@@ -6,16 +6,14 @@ import Loading from "./ui/Loading";
 import SectionDivider from "./SectionDivider";
 import { useMediaQuery } from "@chakra-ui/react";
 
-
 const Contact = () => {
-
   const targetRef = React.useRef<HTMLDivElement | null>(null);
   const formRef = React.useRef<HTMLFormElement>(null);
 
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
 
-  const test = typeof window !== 'undefined' ? window.innerWidth : 0;
+  const test = typeof window !== "undefined" ? window.innerWidth : 0;
 
   const isMobileView = test < 768;
 
@@ -28,7 +26,11 @@ const Contact = () => {
 
   const scaleSection = useTransform(scrollYProgress, [0, 0.5], [1.5, 1]);
 
-  const scaleForm = useTransform(scrollYProgress, [0, 0.5], [isMobileView ? 1.1: 1.3, 1]);
+  const scaleForm = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    [isMobileView ? 1.1 : 1.3, 1],
+  );
 
   const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,7 +42,7 @@ const Contact = () => {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         e.currentTarget,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
       )
       .then(
         (result) => {
@@ -54,23 +56,23 @@ const Contact = () => {
         (error) => {
           setIsLoading(false);
           console.log(error.text);
-        }
+        },
       );
   };
   return (
-    <div ref={targetRef} id="contact" className="flex flex-col justify-center items-center mt-10">
-      <motion.div
-        style={{ opacity , scale: scaleSection}}
-      >
-        <SectionDivider 
+    <div
+      ref={targetRef}
+      id="contact"
+      className="flex flex-col justify-center items-center mt-10"
+    >
+      <motion.div style={{ opacity, scale: scaleSection }}>
+        <SectionDivider
           sectionName="Contact"
-          className='rounded-[25px] hover:border-zinc-400 duration-300 ease-in mb-6'
+          className="rounded-[25px] hover:border-zinc-400 duration-300 ease-in mb-6"
         />
       </motion.div>
 
-      <motion.div
-        style={{ opacity , scale: scaleForm}}
-      >
+      <motion.div style={{ opacity, scale: scaleForm }}>
         <form
           className="flex flex-col items-center justify-center gap-y-3 mt-[100px]"
           onSubmit={onFormSubmit}
@@ -116,8 +118,7 @@ const Contact = () => {
             type="submit"
             className="bg-[#28282a97] px-5 py-2 w-[350px] border-[#343437] border-[1px] rounded-md text-white focus:outline-[2px] focus:outline-[#27272A] focus:outline focus:outline-offset-[3px] hover:bg-[#27272A] hover:border-[#39393c] transition duration-300 ease-in-out"
           >
-            {isLoading ? 
-            <Loading/> : isSuccess ? "Sent!" : "Send"}
+            {isLoading ? <Loading /> : isSuccess ? "Sent!" : "Send"}
           </motion.button>
         </form>
       </motion.div>

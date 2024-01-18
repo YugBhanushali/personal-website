@@ -14,14 +14,14 @@ const Tools = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
-  const toolsOpacity = useTransform(scrollYProgress, [0, 0.6], [0,1]);
+  const toolsOpacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
-  const sectionScale = useTransform(scrollYProgress, [0,0.5],[1.4,1])
+  const sectionScale = useTransform(scrollYProgress, [0, 0.5], [1.4, 1]);
 
   return (
     <div ref={targetRef} className="flex flex-col items-center">
       <motion.div
-        style={{opacity,scale:sectionScale}}
+        style={{ opacity, scale: sectionScale }}
         transition={{
           duration: 0.5,
           ease: "easeInOut",
@@ -35,7 +35,10 @@ const Tools = () => {
         />
       </motion.div>
 
-      <motion.div style={{opacity:toolsOpacity}} className="flex flex-wrap items-center justify-center gap-4">
+      <motion.div
+        style={{ opacity: toolsOpacity }}
+        className="flex flex-wrap items-center justify-center gap-4"
+      >
         {toolsData.map((tool, index) => (
           <motion.div>
             <Popover content={tool.name}>

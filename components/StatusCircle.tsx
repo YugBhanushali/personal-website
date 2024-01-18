@@ -6,7 +6,7 @@ type StatusCircleProps = {
 };
 
 const StatusCircle = ({ currentStatus }: StatusCircleProps) => {
-    const { title, colour, boxShadow } = DevelperStatus(currentStatus);
+  const { title, colour, boxShadow } = DevelperStatus(currentStatus);
   return (
     <div
       className={`h-2 w-2 rounded-full filter `}

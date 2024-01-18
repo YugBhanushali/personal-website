@@ -1,38 +1,37 @@
-'use client'
+"use client";
 import { DevelperStatus, HeroTitle } from "@/utils/Constants";
 import React, { useEffect } from "react";
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import StatusCircle from "./StatusCircle";
 import { Particles } from "./Particles";
 
-
 const Hero = () => {
-
   const targetRef = React.useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["end end", "end start"]
+    offset: ["end end", "end start"],
   });
 
   //changes the status of the Developer
   const { title, colour, boxShadow } = DevelperStatus("Active");
 
-  const opacity = useTransform(scrollYProgress, 
-    [0.5,0.9]
-    ,[1, 0]);
-  const scale = useTransform(scrollYProgress,
-    [0.5, 0.9],
-    [1, 0.5]
-  );
+  const opacity = useTransform(scrollYProgress, [0.5, 0.9], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0.5, 0.9], [1, 0.5]);
 
   // make a function which return
-  function getNum(num:number) {
-    return num*0.14;
+  function getNum(num: number) {
+    return num * 0.14;
   }
 
   return (
-    <div ref={targetRef} className="flex flex-col justify-center items-center mt-[150px]">
-      <motion.div style={{opacity,scale}} className="flex flex-col justify-center items-center" >
+    <div
+      ref={targetRef}
+      className="flex flex-col justify-center items-center mt-[150px]"
+    >
+      <motion.div
+        style={{ opacity, scale }}
+        className="flex flex-col justify-center items-center"
+      >
         <motion.div
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,19 +56,22 @@ const Hero = () => {
           <motion.div className="flex flex-wrap items-center justify-center">
             {HeroTitle.map((title, index) => {
               return (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, y: 150 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: getNum(index), ease: "easeInOut",stiffness: 100 ,spring: 0.5 }}
-              >
-                <div
-                  className="sm:mx-1 mx-[2px] sm:px-3 px-2 rounded-[20px] border-[1.5px] border-transparent cursor-pointer hover:bg-white hover:bg-opacity-[0.16] transition-all duration-300 ease-in-out hover:scale-110 hover:border-[#515151] hover:border-[1.5px]"
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 150 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: getNum(index),
+                    ease: "easeInOut",
+                    stiffness: 100,
+                    spring: 0.5,
+                  }}
                 >
-                  {title}
-                </div>
-              </motion.span>
-              )
+                  <div className="sm:mx-1 mx-[2px] sm:px-3 px-2 rounded-[20px] border-[1.5px] border-transparent cursor-pointer hover:bg-white hover:bg-opacity-[0.16] transition-all duration-300 ease-in-out hover:scale-110 hover:border-[#515151] hover:border-[1.5px]">
+                    {title}
+                  </div>
+                </motion.span>
+              );
             })}
           </motion.div>
         </div>
