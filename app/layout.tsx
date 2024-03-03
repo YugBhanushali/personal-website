@@ -46,7 +46,7 @@ export default function RootLayout({
         /> */}
         <link
           property="og:image"
-          content={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
+          href={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
         />
         <meta name="og:type" content="website" />
         <meta name="og:url" content={URL_OF_WEBSITE} />
@@ -62,7 +62,7 @@ export default function RootLayout({
         /> */}
         <link
           property="twitter:image"
-          content={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
+          href={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
         />
         <meta name="twitter:url" content={URL_OF_WEBSITE} />
         <meta name="twitter:creator" content="@TheYug03" />
