@@ -40,7 +40,7 @@ export default function RootLayout({
         {/* Open Graph */}
         <meta name="og:title" content={TITLE} />
         <meta name="og:description" content={DESCRIPTION} />
-        <meta name="og:image" content={`${URL_OF_WEBSITE}/logo.png`} />
+        <meta name="og:image" content={`${URL_OF_WEBSITE}/yug-og.png`} />
         <meta name="og:type" content="website" />
         <meta name="og:url" content={URL_OF_WEBSITE} />
         <meta name="og:site_name" content={TITLE} />
@@ -49,7 +49,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESCRIPTION} />
-        <meta name="twitter:image" content={`${URL_OF_WEBSITE}/logo.png`} />
+        <meta name="twitter:image" content={`${URL_OF_WEBSITE}/yug-og.png`} />
         <meta name="twitter:url" content={URL_OF_WEBSITE} />
         <meta name="twitter:creator" content="@TheYug03" />
         <meta name="twitter:image:alt" content={TITLE} />
@@ -58,7 +58,7 @@ export default function RootLayout({
         {/* Google */}
         <meta itemProp="name" content={TITLE} />
         <meta itemProp="description" content={DESCRIPTION} />
-        <meta itemProp="image" content={`${URL_OF_WEBSITE}/logo.png`} />
+        <meta itemProp="image" content={`${URL_OF_WEBSITE}/yug-og.png`} />
 
         {/* Robots */}
         <meta name="robots" content="index, follow" />
