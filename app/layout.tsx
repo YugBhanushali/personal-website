@@ -40,8 +40,12 @@ export default function RootLayout({
         {/* Open Graph */}
         <meta name="og:title" content={TITLE} />
         <meta name="og:description" content={DESCRIPTION} />
-        <meta
+        {/* <meta
           name="og:image"
+          content={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
+        /> */}
+        <link
+          property="og:image"
           content={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
         />
         <meta name="og:type" content="website" />
@@ -52,8 +56,12 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESCRIPTION} />
-        <meta
+        {/* <meta
           name="twitter:image"
+          content={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
+        /> */}
+        <link
+          property="twitter:image"
           content={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
         />
         <meta name="twitter:url" content={URL_OF_WEBSITE} />
