@@ -25,7 +25,7 @@ const Techs = () => {
   const scaleTech = useTransform(
     scrollYProgress,
     [0, 0.4],
-    [isMobileView ? 1 : 1.8, 1],
+    [isMobileView ? 1 : 1.8, 1]
   );
 
   const xTranslate = (index: number) => {
@@ -46,7 +46,7 @@ const Techs = () => {
         />
       </motion.div>
 
-      <div className="sm:grid flex flex-wrap justify-center items-center gap-4 sm:grid-rows-2 sm:grid-cols-6">
+      <div className="sm:grid flex flex-wrap justify-center items-center gap-4 sm:grid-rows-2 sm:grid-cols-7">
         {tecnologiesData.map((tech, index) => {
           return (
             <PopOver content={tech.name}>

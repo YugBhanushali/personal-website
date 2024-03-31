@@ -279,27 +279,50 @@ export const projectCardData = [
   },
   {
     projectId: 7,
-    projectName: "SGPA Calculator",
-    githubLink: "https://github.com/YugBhanushali/SGPA-Calculator",
-    projectLink: "https://sgpa-calculators.vercel.app/",
-    projectImage: "/assets/sgpa-calculator-home.png",
+    projectName: "webwall",
+    githubLink: "https://github.com/YugBhanushali/webwall",
+    projectLink: "https://www.npmjs.com/package/webwall",
+    projectImage: "/assets/webwall-home.png",
     techStack: [
       {
-        name: "Next.js",
-        backgroundColour: "#9100006e",
-        borderColour: "#5f2101cc",
-        borderColourHover: "#c81717",
-        icon: "/assets/tech-logos/nextjs.png",
+        name: "Javascript",
+        backgroundColour: "#f5d76e3b",
+        borderColour: "#939b00cc",
+        borderColourHover: "#f5d76e",
+        icon: "/assets/tech-logos/javascript.png",
       },
       {
-        name: "tailwindcss",
-        backgroundColour: "#06b6d43b",
-        borderColour: "#004959cc",
-        borderColourHover: "#06b6d4",
-        icon: "/assets/tech-logos/tailwindcss.png",
+        name: "npm",
+        backgroundColour: "#ff00003b",
+        borderColour: "#7a0000cc",
+        borderColourHover: "#ff0000",
+        icon: "/assets/tech-logos/npm-logos.png",
       },
     ],
   },
+  // {
+  //   projectId: 7,
+  //   projectName: "SGPA Calculator",
+  //   githubLink: "https://github.com/YugBhanushali/SGPA-Calculator",
+  //   projectLink: "https://sgpa-calculators.vercel.app/",
+  //   projectImage: "/assets/sgpa-calculator-home.png",
+  //   techStack: [
+  //     {
+  //       name: "Next.js",
+  //       backgroundColour: "#9100006e",
+  //       borderColour: "#5f2101cc",
+  //       borderColourHover: "#c81717",
+  //       icon: "/assets/tech-logos/nextjs.png",
+  //     },
+  //     {
+  //       name: "tailwindcss",
+  //       backgroundColour: "#06b6d43b",
+  //       borderColour: "#004959cc",
+  //       borderColourHover: "#06b6d4",
+  //       icon: "/assets/tech-logos/tailwindcss.png",
+  //     },
+  //   ],
+  // },
 ];
 
 export const tecnologiesData = [
@@ -362,6 +385,16 @@ export const tecnologiesData = [
     name: "PostgresSQL",
     boxShadow: "0px 0px 15px 4px #3b779f",
     image: "/assets/tech-logos/postgres.png",
+  },
+  {
+    name: "Amazon Web Services",
+    boxShadow: "0px 0px 15px 4px #1c6fa6",
+    image: "/assets/tech-logos/aws-logo.png",
+  },
+  {
+    name: "Prisma",
+    boxShadow: "0px 0px 15px 4px #1c6fa6",
+    image: "/assets/tech-logos/prisma.png",
   },
 ];
 

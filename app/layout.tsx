@@ -60,10 +60,10 @@ export default function RootLayout({
           name="twitter:image"
           content={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
         /> */}
-        <link
+        {/* <link
           property="twitter:image"
           href={`${URL_OF_WEBSITE}/assets/og/yug-og.png`}
-        />
+        /> */}
         <meta name="twitter:url" content={URL_OF_WEBSITE} />
         <meta name="twitter:creator" content="@TheYug03" />
         <meta name="twitter:image:alt" content={TITLE} />
