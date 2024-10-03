@@ -83,17 +83,6 @@ const Navbar = () => {
     },
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLogoClickedMobile(true);
-    }, 3000);
-
-    const timer2 = setTimeout(() => {
-      setIsLogoClickedMobile(false);
-    }, 7000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <>
       {isMobile ? (
